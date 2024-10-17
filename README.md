@@ -2,7 +2,8 @@
 ---
 
 ### Acknowledgment and Licensing:
-   This repository is based on content from [Karan Pratap Singh’s system-design repository](https://github.com/karanpratapsingh/system-design), which is licensed under the [MIT License](https://github.com/karanpratapsingh/system-design/blob/master/LICENSE).  
+   - This repository is based on content from [Karan Pratap Singh’s system-design repository](https://github.com/karanpratapsingh/system-design),
+   - which is licensed under the [MIT License](https://github.com/karanpratapsingh/system-design/blob/master/LICENSE).  
    
    Modifications have been made to better suit my personal learning objectives. This repository follows the same licensing terms.  
 
@@ -27,7 +28,7 @@
   - [Clustering](#clustering)
   - [Caching](#caching)
   - [Content Delivery Network (CDN)](#content-delivery-network-cdn)
-  - [Proxy](#proxy)
+  - [Proxy Server](#proxy)
   - [Availability](#availability)
   - [Scalability](#scalability)
   - [Storage](#storage)
