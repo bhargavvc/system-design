@@ -1,6 +1,7 @@
 
 ## Table of Contents
 
+## Table of Contents
 - [1. Design Requirements](#design-requirements)
   - [1.1 Data Movement](#data-movement)
   - [1.2 Data Storage](#data-storage)
@@ -65,7 +66,7 @@
 ---
 
 
-### 1. Design Requirements
+# 1. Design Requirements
 
 #### 1.1 Data Movement
    - **Concept**: The process of transferring data between different parts of a computer or between different computers within a network or across the internet.
