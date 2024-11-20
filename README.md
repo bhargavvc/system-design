@@ -12,7 +12,7 @@ The purpose of this repository is to provide a single source of truth for learni
 ### Files Description
 
 - **Bottlenecks(SOP).md**: This document outlines standard operating procedures and identifies common bottlenecks in system architecture, offering solutions to enhance performance.
-- **[System Design For Interviews.md](https://github.com/bhargavvc/system-design/blob/main/System%20Design%20For%20Interviews.md)**: A comprehensive guide tailored for those preparing for system design interviews. It includes key concepts, questions, and solutions that are frequently discussed in technical interviews.
+- **[System Design For Interviews.md](https://github.com/bhargavvc/system-design/blob/main/SystemDesignForInterviews.md)**: A comprehensive guide tailored for those preparing for system design interviews. It includes key concepts, questions, and solutions that are frequently discussed in technical interviews.
 
 - **[System Design (Beginners).md](https://github.com/bhargavvc/system-design/blob/main/System%20Design%20(Beginners).md)**: An introductory guide for newcomers to system design. It covers fundamental concepts and simple systems to help build a strong foundation.
 
