@@ -5,9 +5,6 @@
 # RealWorld Applications System Designs[RealWorld Applications System Designs](#realworld-applications-system-designs)
 # Custom System Desing Ideas
 
-
-
-
 ### Detailed Guide to System Design Interviews
 
 System design interviews assess your ability to create scalable, efficient, and maintainable systems. Here’s a step-by-step guide to help you prepare and excel in these interviews:
