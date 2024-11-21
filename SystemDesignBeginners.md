@@ -1,67 +1,67 @@
 
-## Table of Contents
+## Content Extracted From (Neetcode.io)
 
 ## Table of Contents
-- [1. Design Requirements](#design-requirements)
-  - [1.1 Data Movement](#data-movement)
-  - [1.2 Data Storage](#data-storage)
-  - [1.3 Data Transformation](#data-transformation)
-  - [1.4 System Availability](#system-availability)
-  - [1.5 Fault Tolerance and Redundancy](#fault-tolerance-and-redundancy)
-  - [1.6 Throughput](#throughput)
-  - [1.7 Latency](#latency)
-- [2. Computer Architecture Components](#computer-architecture-components)
-  - [2.1 Storage (Disk)](#storage-disk)
-  - [2.2 Memory (RAM)](#memory-ram)
-  - [2.3 CPU (Central Processing Unit)](#cpu-central-processing-unit)
-  - [2.4 Cache](#cache)
-  - [2.5 Bus](#bus)
-  - [2.6 GPU (Graphics Processing Unit)](#gpu-graphics-processing-unit)
-  - [2.7 Motherboard](#motherboard)
-  - [2.8 Power Supply Unit (PSU)](#power-supply-unit-psu)
-  - [2.9 I/O Devices (Input/Output Devices)](#io-devices-inputoutput-devices)
-  - [2.10 Network Interface Card (NIC)](#network-interface-card-nic)
-  - [2.11 BIOS/UEFI](#biosuefi)
-  - [2.12 Registers](#registers)
-- [3. Application Architecture](#application-architecture)
-  - [3.1 Code Deployment](#code-deployment)
-  - [3.2 Storage](#storage-1)
-  - [3.3 Vertical Scaling](#vertical-scaling)
-  - [3.4 Horizontal Scaling](#horizontal-scaling)
-  - [3.5 Load Balancer](#load-balancer)
-  - [3.6 Logging Service](#logging-service)
-  - [3.7 Metrics Service](#metrics-service)
-  - [3.8 Alerting Service](#alerting-service)
-  - [3.9 Networking](#networking)
-- [4. Networking Basics](#networking-basics)
-  - [4.1 IP Addresses and Data Packets](#ip-addresses-and-data-packets)
-  - [4.2 Transmission Protocols (TCP/IP)](#transmission-protocols-tcpip)
-  - [4.3 Public vs. Private IP Addresses](#public-vs-private-ip-addresses)
-  - [4.4 Ports and Port Forwarding](#ports-and-port-forwarding)
-- [5. TCP vs UDP](#tcp-vs-udp)
-  - [5.1 TCP (Transmission Control Protocol)](#tcp-transmission-control-protocol)
-  - [5.2 UDP (User Datagram Protocol)](#udp-user-datagram-protocol)
-- [6. DNS](#dns)
-- [7. Overview of Application Layer Protocols](#overview-of-application-layer-protocols)
-  - [7.1 Client-Server Model](#client-server-model)
-  - [7.2 Remote Procedure Calls (RPC)](#remote-procedure-calls-rpc)
-  - [7.3 HTTP (Hypertext Transfer Protocol)](#http-hypertext-transfer-protocol)
-  - [7.4 WebSockets](#websockets)
-- [8. Overview of APIs and Common Paradigms](#overview-of-apis-and-common-paradigms)
-  - [8.1 REST APIs](#rest-apis)
-  - [8.2 GraphQL APIs](#graphql-apis)
-  - [8.3 gRPC APIs](#grpc-apis)
-- [9. Basics of API Design](#basics-of-api-design)
-- [10. Caching: An Overview](#caching-an-overview)
-- [11. Content Delivery Networks (CDNs)](#content-delivery-networks-cdns)
-- [12. Proxies and Load Balancers](#proxies-and-load-balancers)
-- [13. Consistent Hashing: Overview and Applications](#consistent-hashing-overview-and-applications)
-- [14. Introduction to SQL and Relational Databases](#introduction-to-sql-and-relational-databases)
-- [15. Introduction to NoSQL Databases](#introduction-to-nosql-databases)
-- [16. Replication and Sharding in Databases](#replication-and-sharding-in-databases)
-- [17. CAP Theorem: Understanding the Trade-offs in Distributed Databases](#cap-theorem-understanding-the-trade-offs-in-distributed-databases)
-- [18. Understanding Object Storage](#understanding-object-storage)
-- [19. Understanding Message Queues](#understanding-message-queues)
+- [1. Design Requirements](#1-design-requirements)
+  - [1.1 Data Movement](#11-data-movement)
+  - [1.2 Data Storage](#12-data-storage)
+  - [1.3 Data Transformation](#13-data-transformation)
+  - [1.4 System Availability](#14-system-availability)
+  - [1.5 Fault Tolerance and Redundancy](#15-fault-tolerance-and-redundancy)
+  - [1.6 Throughput](#16-throughput)
+  - [1.7 Latency](#17-latency)
+- [2. Computer Architecture Components](#2-computer-architecture-components)
+  - [2.1 Storage (Disk)](#21-storage-disk)
+  - [2.2 Memory (RAM)](#22-memory-ram)
+  - [2.3 CPU (Central Processing Unit)](#23-cpu-central-processing-unit)
+  - [2.4 Cache](#24-cache)
+  - [2.5 Bus](#25-bus)
+  - [2.6 GPU (Graphics Processing Unit)](#26-gpu-graphics-processing-unit)
+  - [2.7 Motherboard](#27-motherboard)
+  - [2.8 Power Supply Unit (PSU)](#28-power-supply-unit-psu)
+  - [2.9 I/O Devices (Input/Output Devices)](#29-io-devices-inputoutput-devices)
+  - [2.10 Network Interface Card (NIC)](#210-network-interface-card-nic)
+  - [2.11 BIOS/UEFI](#211-biosuefi)
+  - [2.12 Registers](#212-registers)
+- [3. Application Architecture](#3-application-architecture)
+  - [3.1 Code Deployment](#31-code-deployment)
+  - [3.2 Storage](#32-storage)
+  - [3.3 Vertical Scaling](#33-vertical-scaling)
+  - [3.4 Horizontal Scaling](#34-horizontal-scaling)
+  - [3.5 Load Balancer](#35-load-balancer)
+  - [3.6 Logging Service](#36-logging-service)
+  - [3.7 Metrics Service](#37-metrics-service)
+  - [3.8 Alerting Service](#38-alerting-service)
+  - [3.9 Networking](#39-networking)
+- [4. Networking Basics](#4-networking-basics)
+  - [4.1 IP Addresses and Data Packets](#41-ip-addresses-and-data-packets)
+  - [4.2 Transmission Protocols (TCP/IP)](#42-transmission-protocols-tcpip)
+  - [4.3 Public vs. Private IP Addresses](#43-public-vs-private-ip-addresses)
+  - [4.4 Ports and Port Forwarding](#44-ports-and-port-forwarding)
+- [5. TCP vs UDP](#5-tcp-vs-udp)
+  - [5.1 TCP (Transmission Control Protocol)](#51-tcp-transmission-control-protocol)
+  - [5.2 UDP (User Datagram Protocol)](#52-udp-user-datagram-protocol)
+- [6. DNS](#6-dns)
+- [7. Overview of Application Layer Protocols](#7-overview-of-application-layer-protocols)
+  - [7.1 Client-Server Model](#71-client-server-model)
+  - [7.2 Remote Procedure Calls (RPC)](#72-remote-procedure-calls-rpc)
+  - [7.3 HTTP (Hypertext Transfer Protocol)](#73-http-hypertext-transfer-protocol)
+  - [7.4 WebSockets](#74-websockets)
+- [8. Overview of APIs and Common Paradigms](#8-overview-of-apis-and-common-paradigms)
+  - [8.1 REST APIs](#81-rest-apis)
+  - [8.2 GraphQL APIs](#82-graphql-apis)
+  - [8.3 gRPC APIs](#83-grpc-apis)
+- [9. Basics of API Design](#9-basics-of-api-design)
+- [10. Caching: An Overview](#10-caching-an-overview)
+- [11. Content Delivery Networks (CDNs)](#11-content-delivery-networks-cdns)
+- [12. Proxies and Load Balancers](#12-proxies-and-load-balancers)
+- [13. Consistent Hashing: Overview and Applications](#13-consistent-hashing-overview-and-applications)
+- [14. Introduction to SQL and Relational Databases](#14-introduction-to-sql-and-relational-databases)
+- [15. Introduction to NoSQL Databases](#15-introduction-to-nosql-databases)
+- [16. Replication and Sharding in Databases](#16-replication-and-sharding-in-databases)
+- [17. CAP Theorem: Understanding the Trade-offs in Distributed Databases](#17-cap-theorem-understanding-the-trade-offs-in-distributed-databases)
+- [18. Understanding Object Storage](#18-understanding-object-storage)
+- [19. Understanding Message Queues](#19-understanding-message-queues)
 
 ---
 
@@ -92,7 +92,7 @@
    - **Disadvantage**: Making sure a system is highly available can be expensive and complicated. It often requires backup systems and can lead to having more resources than necessary.
    - **Real-World Example**: Cloud services like AWS or Google Cloud use multiple server locations. If one location fails, others can take over the work, ensuring that services remain available.
 
-### 5. **Fault Tolerance and Redundancy**
+### 1.5. **Fault Tolerance and Redundancy**
    - **Concept**: Designing a system that continues to operate properly in the event of the failure of some of its components.
    - **Advantage**: It improves the system's reliability and ensures that services continue without interruption, even during hardware or software failures.
    - **Disadvantage**: Implementing this can be costly because it often requires extra resources to create backup systems or components.
@@ -103,14 +103,14 @@
    **Durability**
    The ability of a product to remain functional over its design lifetime without excessive maintenance or repair. Durability testing focuses on a product's lifespan and long-term use. 
 
-### 6. Throughput
+### 1.6. Throughput
    - **Concept**:  Throughput is a measure of the rate at which a system processes transactions or data units over a defined period,expressed in transactions per second (TPS), requests per second (RPS), or bytes per second (BPS)
 
    - **Advantage**: High throughput allows a system to handle more transactions and serve more users effectively.
    - **Disadvantage**: May require more powerful hardware or complex system configurations to handle high levels of data processing, impacting costs.
    - **Real-World Example**: High Request traffic websites like Netflix or YouTube that manage data streaming and user requests at massive scales to ensure smooth video playback and responsive user interfaces.
 
-### 7. **Latency**
+### 1.7. **Latency**
    - **Concept**: The time it takes for data to travel from one point in the network to another; crucial in networking and real-time processing.
    - **Advantage**: Low latency improves user experience by providing faster responses and real-time interaction capabilities.
    - **Disadvantage**: Achieving low latency across global systems can be challenging due to physical limitations(distance, infrastructure, and the inherent properties of data transmission), often requiring significant investment in optimized network solutions.
