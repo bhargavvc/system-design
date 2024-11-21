@@ -1336,6 +1336,8 @@ Message queues and Pub/Sub architectures are powerful tools for building scalabl
 
 **MapReduce** is a programming model and an associated implementation for processing and generating large data sets with a parallel, distributed algorithm on a cluster. It was introduced by **Google** and is designed to simplify data processing across massive datasets by using a distributed architecture.
 
+![MapReduce-model](https://raw.githubusercontent.com/bhargavvc/system-design/img/MapReduceModel.png)
+
 ### **Why Use MapReduce?**
 
 - **Scalability**: Efficiently processes petabytes of data across thousands of machines.
