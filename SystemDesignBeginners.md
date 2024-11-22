@@ -1157,6 +1157,8 @@ The CAP theorem, along with its extension into the PACELC theorem, provides valu
 
 Object storage has gained significant traction as a robust storage solution over the last decade. Unlike traditional file systems that rely on a hierarchical structure, object storage organizes data in a flat structure, which simplifies access and management, particularly for large files.
 
+![ObjectStorage](https://raw.githubusercontent.com/bhargavvc/system-design/main/img/ObjectStorage.png)
+
 #### Key Features of Object Storage
 
 1. **Flat Storage Structure:**

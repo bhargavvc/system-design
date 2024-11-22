@@ -1,0 +1,2 @@
+#To Declare Image
+![ObjectStorage](https://raw.githubusercontent.com/bhargavvc/system-design/main/img/ObjectStorage.png)
