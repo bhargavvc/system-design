@@ -1094,6 +1094,8 @@ Both replication and sharding are vital strategies in modern database design. Re
 The **CAP theorem**, also known as Brewer's theorem, is a fundamental principle in the realm of distributed databases. It highlights the trade-offs that system designers must consider when designing systems that require data replication across multiple nodes.
 
 ### Key Concepts of CAP Theorem
+![CAP Theorm](https://raw.githubusercontent.com/bhargavvc/system-design/main/img/CAPTheorem.png)
+
 
 **1. The Components:**
 - **Consistency (C):** Every read operation returns the most recent write for a given piece of data, ensuring that all replicas reflect the same data.
@@ -1129,6 +1131,7 @@ The CAP theorem is often misunderstood because:
 2. **Generalization:** Applying CAP to non-replicated systems (like a single-node database) is not meaningful. CAP is specific to systems where data is distributed across multiple nodes.
 
 ### Alternative Perspective: PACELC Theorem
+![ChoiceOfChoosing](https://raw.githubusercontent.com/bhargavvc/system-design/main/img/ChoiceOFchoosing.png)
 
 To extend the conversation around CAP, we can consider the **PACELC theorem**, which adds more nuance to the discussion:
 
