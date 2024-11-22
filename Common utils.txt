@@ -1,2 +1,7 @@
 #To Declare Image
 ![ObjectStorage](https://raw.githubusercontent.com/bhargavvc/system-design/main/img/ObjectStorage.png)
+
+
+![DBLeaderFollowerReplication](https://raw.githubusercontent.com/bhargavvc/system-design/main/img/DBLeaderFollowerReplication.png)
+![HashBasedSharding](https://raw.githubusercontent.com/bhargavvc/system-design/main/img/HashBasedSharding.png)
+![RangeBasedSharding](https://raw.githubusercontent.com/bhargavvc/system-design/main/img/RangeBasedSharding.png)

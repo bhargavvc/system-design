@@ -1012,6 +1012,8 @@ Replication and sharding are essential techniques used in databases to enhance s
 - **Types of Replication**:
 
 1. **Leader-Follower Replication** (or Master-Slave):
+   - ![DBLeaderFollowerReplication](https://raw.githubusercontent.com/bhargavvc/system-design/main/img/DBLeaderFollowerReplication.png)   
+   
    - **Structure**: One leader (or master) database handles all write operations, while one or more follower (or slave) databases replicate the data from the leader.
    - **Data Flow**: 
      - Reads can be done from both the leader and followers.
@@ -1024,6 +1026,8 @@ Replication and sharding are essential techniques used in databases to enhance s
      - **Asynchronous Replication**: Data is replicated to followers at a later time. This allows for higher performance but may lead to temporary inconsistencies (stale reads).
 
 2. **Leader-Leader Replication** (or Master-Master):
+   - ![DBLeaderLeaderReplica](https://raw.githubusercontent.com/bhargavvc/system-design/main/img/DBLeaderLeaderReplica.png)
+
    - **Structure**: Multiple leaders that can handle both read and write operations.
    - **Advantages**:
      - Increased write scalability since all nodes can accept writes.
@@ -1061,11 +1065,16 @@ Replication and sharding are essential techniques used in databases to enhance s
   
 - **Sharding Strategies**:
   1. **Range-Based Sharding**:
+     - ![RangeBasedSharding](https://raw.githubusercontent.com/bhargavvc/system-design/main/img/RangeBasedSharding.png)
+
      - Data is partitioned based on ranges of a shard key (e.g., user IDs or alphabetical ranges).
      - Example: Users with IDs 1-1000 might go to one shard, while IDs 1001-2000 go to another.
      - **Considerations**: Can lead to uneven load distribution if data access patterns are skewed.
   
   2. **Hash-Based Sharding**:
+     - ![HashBasedSharding](https://raw.githubusercontent.com/bhargavvc/system-design/main/img/HashBasedSharding.png)
+   
+  
      - A hash function is applied to the shard key to determine which shard the data should belong to.
      - Example: User ID hashed to decide its shard location.
      - **Advantages**: More evenly distributes data across shards, reducing the risk of hotspotting.
