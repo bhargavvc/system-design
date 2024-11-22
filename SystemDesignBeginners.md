@@ -62,7 +62,6 @@
 - [17. CAP Theorem: Understanding the Trade-offs in Distributed Databases](#17-cap-theorem-understanding-the-trade-offs-in-distributed-databases)
 - [18. Understanding Object Storage](#18-understanding-object-storage)
 - [19. Understanding Message Queues](#19-understanding-message-queues)
-
 - [20. Map Reduce Model](#20-map-reduce-model)
    - [20.1 Introduction to the MapReduce Model](#201-introduction-to-the-mapreduce-model)
    - [20.2 Historical Background and Motivation](#202-historical-background-and-motivation)
@@ -1226,105 +1225,137 @@ Object storage has gained significant traction as a robust storage solution over
 
 Object storage represents a significant advancement in data management, particularly for applications that handle large files or require scalable storage solutions. Its simplicity, scalability, and ease of access make it a preferred choice for modern applications, especially in scenarios where traditional file systems or databases would be inefficient or overly complex. Understanding the nuances of object storage will equip you with the knowledge needed to design effective data storage solutions in various applications.
 
+## **19. Understanding Message Queues**
+Message queues are fundamental to distributed systems, enabling asynchronous communication between services. They help decouple producers and consumers, improving scalability, fault tolerance, and maintainability.
 
-### 19. Understanding Message Queues
+---
 
-Message queues are essential tools in modern software architecture, particularly for managing asynchronous communication between services. They help decouple components, allowing for efficient processing of events and managing large volumes of data traffic. Here’s a deeper dive into message queues, their benefits, and the related concepts of Pub/Sub architecture.
+### **What are Message Queues?**
 
-#### What are Message Queues?
-
-A message queue is a mechanism for storing messages (or events) sent from one application or service until they are processed by another. This system allows applications to communicate asynchronously, meaning that the sending and receiving processes do not need to occur simultaneously.
+A **Message Queue** is a communication mechanism where messages are sent by a producer (sender) and stored temporarily until a consumer (receiver) retrieves and processes them.
 
 **Key Characteristics:**
+1. **Decoupling Services:** Producers and consumers operate independently, making systems flexible.
+2. **Asynchronous Processing:** Tasks can be queued without blocking the producer.
+3. **Durability:** Messages persist even if the queue service or consumer crashes.
+4. **Reliability:** Ensures messages are processed, preventing data loss.
+5. **Order Guarantees:** Messages can follow FIFO (First In, First Out) or custom priorities.
+6. **Acknowledgements:** Consumers confirm successful processing, ensuring no messages are lost.
 
-1. **Decoupling of Services:**
-   - By using message queues, services can operate independently. The producer (service sending messages) and the consumer (service processing messages) do not need to be aware of each other, which enhances flexibility and scalability.
+---
 
-2. **Asynchronous Processing:**
-   - Messages can be sent to the queue even if the consumer is busy. This enables the system to handle bursts of traffic without overloading any single component.
+# **Message Queues Example with Django, RabbitMQ, and Celery: Beginner to Expert Overview**
+![MBroker](https://raw.githubusercontent.com/bhargavvc/system-design/main/img/MessageBroker.png)
+## **Django, Celery, and RabbitMQ Workflow**
 
-3. **Durability:**
-   - Messages in a queue are typically persisted to disk, ensuring they are not lost even if the queue service crashes. This reliability is crucial for many applications, such as payment processing.
+### **Roles Defined**
+1. **Django Application (Producer):** 
+   - **As a Producer**:Sends tasks(with help of celery aync or delay function) to the queue(rabbitMq), e.g., for background job processing.
+   - **As a Consumer**: Retrieves task results (e.g., via polling or callbacks(passing celery task id to views/functions)) or listens to RabbitMQ topics for messages in Pub/Sub models.
 
-4. **Reliability**:
-   - Most message queue systems ensure that messages are delivered even if the consumer is temporarily unavailable. Messages remain in the queue until they are processed, preventing data loss.
+2. **RabbitMQ (Broker):** Stores and delivers tasks/messages (Django, Celery) and consumers (Celery, Django).
 
-5. **Order of Processing**:
-   - Depending on the message queue implementation, messages can be processed in the order they are received (FIFO - First In, First Out) or in priority order.
+3. **Celery Worker (Producer and Consumer):** 
+   - **As a Producer**: Can enqueue(add tasks to Queue) additional tasks (e.g., chaining or spawning subtasks during execution).
+   - **As a Consumer**: Primarily listens to RabbitMQ, retrieves tasks, and processes them asynchronously.
 
-6. **Acknowledgements:**
-   - Once a message is successfully processed by the consumer, it can send an acknowledgment back to the queue, indicating that it can safely delete the message. If no acknowledgment is received, the message may be requeued for processing again.
-   
+---
 
-#### How Message Queues Work
+### **How It Works:**
 
-When an event occurs (like a user payment), it is sent to a message queue rather than processed immediately. From there, it is read by a consumer service that handles the event, such as updating the database or sending notifications.
+1. **Producer (Django App):**
+   - A user initiates an action,(e.g., generating a report, processing bulk rows of excel sheet or reading excel and generate report).
 
-**Basic Flow:**
+   - Django sends the task to RabbitMQ using Celery as a task manager. This decouples the long-running task from the immediate HTTP response, enabling faster responses to users.
 
-1. **Producer:** The service that creates messages (e.g., a web application that records user actions).
-2. **Queue:** A temporary storage for messages until they are processed.
-3. **Consumer:** The service that retrieves and processes messages from the queue.
+2. **Message Broker (RabbitMQ):**
+   - RabbitMQ receives the task and places it in the appropriate queue.
+   - It ensures reliable delivery of the task to a consumer(such as a Celery worker). 
 
-#### Features of Message Queues
+3. **Consumer (Celery Worker):**
+   - Celery workers fetch tasks from RabbitMQ.
+   - The worker processes the task (e.g., generating a PDF ).
+   - Upon completion, the worker updates Django (e.g., updating a database record or sending a status notification).
+
+---
+
+### **Pub/Sub Architecture Example**
+
+The Publish/Subscribe (Pub/Sub) model expands on message queues by allowing multiple subscribers to consume messages published to a topic.
+
+
+#### **Scenario: Real-Time Notifications**
+1. **Publisher (Django App):**
+   - Publishes a message to a RabbitMQ topic, such as "User Signed Up" or "Order Completed."
+   - Other systems don't need to know about the publisher, promoting decoupling.
+
+2. **RabbitMQ (Broker):**
+   - Manages topics and ensures messages are delivered to all subscribed consumers.
+   - Each topic can have multiple subscribers that process the same message independently.
+
+3. **Subscribers (Consumers):**
+   - Multiple services (e.g., Django, third-party services, Celery workers) subscribe to the topic.
+   - Each subscriber handles the message in its unique way, such as sending an email, updating a dashboard, or triggering a downstream process.
+
+
+---
+
+## **Features of Message Queues**
 
 - **Pull vs. Push:**
-  - **Pull:** Consumers periodically check the queue for new messages.
-  - **Push:** The queue sends messages to consumers as they become available.
+  - **Pull**: Consumers fetch messages when they are ready.
+  - **Push**: Brokers deliver messages to consumers as soon as they are available.
 
-- **Delivery Semantics:**
-  - Different queues may support various delivery guarantees:
-    - **At Most Once:** Messages may be lost but are not duplicated.
-    - **At Least Once:** Messages are never lost but may be processed multiple times.
-    - **Exactly Once:** Messages are processed exactly once (though this is complex to implement).
+- **Delivery Guarantees:**
+  - **At Most Once:** Messages may be lost, but are not duplicated.
+  - **At Least Once:** No messages are lost, but they may be duplicated.
+  - **Exactly Once:** Messages are delivered and processed exactly once (complex to implement).
 
-#### Pub/Sub Architecture
+---
 
-The Publish/Subscribe (Pub/Sub) model expands the concept of message queues by allowing multiple producers and consumers to operate simultaneously.
+## **Advantages of Message Queues**
 
-**Key Concepts:**
+1. **Decoupling:** Producers and consumers operate independently.
+2. **Scalability:** Easily scale consumers to handle more tasks.
+3. **Fault Tolerance:** Tasks persist in the queue until processed.
+4. **Asynchronous Processing:** Producers don't wait for tasks to complete.
+5. **Load Balancing:** Tasks are evenly distributed among consumers.
 
-1. **Publishers:**
-   - Services that send messages to a specific topic without knowing who the subscribers are.
+---
 
-2. **Subscribers:**
-   - Services that receive messages from topics they are subscribed to. Multiple subscribers can receive messages from the same topic.
+## **Disadvantages of Message Queues**
 
-3. **Topics:**
-   - Logical channels where messages are published. Subscribers can listen to specific topics to receive relevant messages.
+1. **Increased Complexity:**
+   - Adds an additional component to manage (RabbitMQ).
+2. **Latency:**
+   - Messages may not be processed immediately.
+3. **Duplication:**
+   - Tasks may be processed multiple times in "At Least Once" delivery.
+4. **Operational Overhead:**
+   - Requires monitoring and scaling brokers and workers.
 
-4. **Subscriptions:**
-   - Define how messages from a topic are delivered to subscribers. A single topic can have multiple subscriptions, allowing different services to process the same event in various ways.
+**Mitigation:**
+- Optimize broker configurations for high throughput.
+- Use deduplication logic at the consumer level.
+- Monitor queues and scale workers dynamically to reduce latency.
 
-**Benefits of Pub/Sub:**
-- **Scalability:** Easily add new services without modifying existing ones.
-- **Flexibility:** Services can respond to events independently based on their specific needs.
-- **Efficiency:** Reduces the complexity of routing messages directly to each service.
+---
 
-#### Popular Message Queue Systems
+## **Comparison of Point-to-Point and Pub/Sub**
 
-1. **RabbitMQ:**
-   - An open-source message broker that supports various messaging protocols, enabling efficient message queuing and delivery.
-  
-2. **Apache Kafka:**
-   - A distributed streaming platform designed for high-throughput, fault-tolerant messaging, commonly used in big data applications.
+| Feature                | Point-to-Point                 | Pub/Sub                              |
+|------------------------|--------------------------------|--------------------------------------|
+| **Communication**      | 1 producer, 1 consumer         | 1 producer, multiple subscribers     |
+| **Use Case**           | Task queues, job processing    | Notifications, broadcast messaging   |
+| **Delivery Guarantees**| Message is delivered once      | All subscribers receive the message  |
 
-3. **Google Cloud Pub/Sub:**
-   - A fully-managed service that allows applications to exchange messages reliably and scalably.
+---
 
-4. **Amazon SQS:**
-   - A fully-managed message queuing service provided by AWS, enabling decoupling of microservices.
+## **Conclusion**
 
-#### Use Cases
+Message queues and Pub/Sub architectures are essential for building scalable, fault-tolerant, and decoupled systems. Using Django, Celery, and RabbitMQ, developers can implement efficient asynchronous task processing and real-time communication in modern web applications.
 
-- **Task Queues**: Systems like Celery use message queues to manage and distribute background tasks across multiple workers, enabling parallel processing and load balancing.
-- **Event-Driven Architectures**: Applications can react to events by publishing messages to a queue, allowing for real-time data processing and communication between services.
-
- 
-### Conclusion
-
-Message queues and Pub/Sub architectures are powerful tools for building scalable, resilient applications. They provide a way to manage asynchronous communication effectively, allowing developers to focus on building features rather than dealing with the intricacies of direct service communication. Understanding message queues will greatly enhance your ability to design systems that can handle varying loads and complex event-driven architectures.
-
+Whether you are processing background tasks, broadcasting notifications, or handling large volumes of traffic, understanding message queues equips you to design resilient and high-performing applications.
 
 # 20. Map Reduce Model
 
@@ -1336,7 +1367,7 @@ Message queues and Pub/Sub architectures are powerful tools for building scalabl
 
 **MapReduce** is a programming model and an associated implementation for processing and generating large data sets with a parallel, distributed algorithm on a cluster. It was introduced by **Google** and is designed to simplify data processing across massive datasets by using a distributed architecture.
 
-![MapReduce-model](https://raw.githubusercontent.com/bhargavvc/system-design/img/MapReduceModel.png)
+![MapReduce-model](https://raw.githubusercontent.com/bhargavvc/system-design/main/img/MapReduceModel.png)
 
 ### **Why Use MapReduce?**
 
