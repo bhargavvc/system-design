@@ -681,17 +681,18 @@ CDNs enhance user experience by delivering content more efficiently, lowering la
 
 ---
 
-### 12. Proxies and Load Balancers
+# 12. Proxies and Load Balancers
 
 Proxies and load balancers play crucial roles in modern web architecture, enhancing security, performance, and scalability. Understanding these concepts is essential for system designers and developers.
 
-#### 12.1 Proxies
+## 12.1 Proxies
 
 - **Definition**: A proxy acts as an intermediary between clients and servers. When a client makes a request, it goes through the proxy, which forwards it to the destination server.
 
 **Types of Proxies:**
 
 1. **Forward Proxies:**
+   - ![ForwardProxy.png](https://raw.githubusercontent.com/bhargavvc/system-design/main/img/ForwardProxy.png)
    - A forward proxy acts as an intermediary between a client and a server. 
    - When a client makes a request, the proxy forwards it to the destination server, effectively hiding the client's IP address.
    - **Use Cases:**
@@ -702,23 +703,27 @@ Proxies and load balancers play crucial roles in modern web architecture, enhanc
    **Example**: Corporate proxies or VPNs that mask users' IP addresses while allowing access to restricted content.
 
 2. **Reverse Proxies:**
+   - ![ReverseProxy](https://raw.githubusercontent.com/bhargavvc/system-design/main/img/ReverseProxy.png)
    - A reverse proxy stands between clients and servers, handling incoming requests and directing them to the appropriate backend server.
    - Unlike forward proxies, clients interact only with the reverse proxy and are unaware of the actual destination servers.
 
    **Example**: CDNs (Content Delivery Networks) serve as reverse proxies by caching static content and handling requests, ensuring users access data more quickly without needing to know the origin server's location.
  
-#### 12.2 Load Balancers
+## 12.2 Load Balancers
 
 **Functionality:**
 - Load balancers distribute incoming network traffic across multiple servers, ensuring no single server becomes overwhelmed. This is crucial for maintaining high availability and reliability in applications with heavy user traffic.
 
 **Common Load Balancing Strategies:**
-1. **Round Robin**: Distributes requests evenly among servers in a cyclic manner. 
+
+1. **Round Robin**: Distributes requests evenly among servers in a cyclic manner.
+- ![RoundRobinmethodLB](https://raw.githubusercontent.com/bhargavvc/system-design/main/img/RoundRobinmethodLB.png)
 2. **Weighted Round Robin**: Similar to round robin, but allows servers with different capacities to handle varying amounts of traffic based on assigned weights.
+- ![Weightedistribution](https://raw.githubusercontent.com/bhargavvc/system-design/main/img/Weightedistribution.png) 
 3. **Least Connections**: Routes requests to the server with the fewest active connections, ideal for varying request durations.
 4. **Geolocation-Based Routing**: Directs traffic based on the user's geographical location, ensuring requests are handled by the nearest server for optimal performance.
  
-#### Types of Load Balancers:
+## Types of Load Balancers:
 1. **Layer 4 Load Balancers**:
    - Operate at the transport layer (TCP/UDP).
    - Forward requests based on IP addresses without inspecting the content of the packets.
@@ -731,7 +736,7 @@ Proxies and load balancers play crucial roles in modern web architecture, enhanc
 
 ---
 
-#### Redundancy and High Availability:
+## Redundancy and High Availability:
 To prevent a single point of failure, load balancers can be deployed in pairs or clusters. If one load balancer goes down, traffic can be rerouted to the backup, ensuring continuous availability.
 
 **Implementation Considerations**:
