@@ -829,6 +829,7 @@ SQL (Structured Query Language) is primarily used to interact with relational da
    - Data in relational databases is stored on disk to ensure durability and persistence. This allows for data to be retained even in the event of a system failure.
 
 2. **Data Structure**: 
+   - ![Btree](https://raw.githubusercontent.com/bhargavvc/topics/main/img/Btree.png)
    - **B+ Trees**: Relational databases often use B+ trees for indexing. B+ trees help in organizing data efficiently for quick retrieval. 
      - **Characteristics**:
        - Nodes can have multiple children, reducing the tree's height.
@@ -897,7 +898,7 @@ Relational databases are foundational to many applications, offering a robust wa
 
 ### 15. Introduction to NoSQL Databases
 
-NoSQL stands for "not only SQL," indicating a diverse category of databases that do not necessarily use structured query language or the relational model. These databases are often referred to as non-relational databases and provide more flexible data models and scaling options compared to traditional SQL databases.
+NoSQL stands for "not only SQL," indicating a diverse category of databases that do not necessarily use structured query language or the relational model. These databases are often referred to as non-relational databases and provide more flexible data models and `scaling options` compared to traditional SQL databases.
  
 ### Key Variations of NoSQL Databases
 
@@ -908,38 +909,42 @@ NoSQL stands for "not only SQL," indicating a diverse category of databases that
    - **Graph Databases**: Store data as nodes and relationships. Example: Neo4j.
 
 
-1. **Key-Value Stores**:
+2. **Key-Value Stores**:
+   - ![RedisKeyValue](https://raw.githubusercontent.com/bhargavvc/topics/main/img/RedisKeyValue.png)
    - **Definition**: Store data as key-value pairs, similar to a hashmap.
    - **Examples**: Redis, Memcached, etcd.
    - **Use Cases**: Ideal for simple scenarios where fast read/write operations are required without complex relationships.
    - **Limitations**: Lack of relations or complex querying capabilities.
 
-2. **Document Stores**:
+3. **Document Stores**:
+   - ![MongoDocument](https://raw.githubusercontent.com/bhargavvc/topics/main/img/MongoDocument.png)
    - **Definition**: Store data in document formats, typically JSON, allowing for nested structures and varied schemas.
    - **Examples**: MongoDB, CouchDB.
    - **Use Cases**: Flexible applications where the schema may change frequently or data is semi-structured.
    - **Advantages**: No predefined schema, making it easy to add or remove fields as needed.
 
-3. **Wide-Column Stores**:
+4. **Wide-Column Stores**:
+   - ![Cassandra](https://raw.githubusercontent.com/bhargavvc/topics/main/img/Cassandra.png)
    - **Definition**: Store data in columns rather than rows, allowing for high write and query performance.
    - **Examples**: Cassandra, Google Bigtable.
    - **Use Cases**: Best for handling large amounts of time-series or analytic data.
    - **Limitations**: Generally not ideal for complex queries requiring joins.
 
-4. **Graph Databases**:
+5. **Graph Databases**:
+   - ![GraphDbRecordStructure](https://raw.githubusercontent.com/bhargavvc/topics/main/img/GraphDbRecordStructure.png)
    - **Definition**: Use graph structures to represent and store data, focusing on relationships between data points.
    - **Examples**: Neo4j, Amazon Neptune.
    - **Use Cases**: Applications with complex relationships, such as social networks and recommendation systems.
    - **Advantages**: Efficiently manage interconnected data without the need for complex joins.
 
 
-2. **Flexible Schema**:
+6. **Flexible Schema**:
    - NoSQL databases often allow for dynamic schema design, meaning that records can have different fields, which provides more flexibility for applications that require evolving data structures.
 
-3. **Horizontal Scaling**:
+7. **Horizontal Scaling**:
    - NoSQL databases are designed for horizontal scaling, meaning they can handle increased load by distributing data across many servers rather than relying on a single powerful server.
 
-4. **Eventual Consistency**:
+8. **Eventual Consistency**:
    - Many NoSQL systems prioritize availability and partition tolerance over immediate consistency, allowing for data to be eventually consistent across nodes rather than strictly consistent at all times.
 
 
