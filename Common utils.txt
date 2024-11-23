@@ -1,4 +1,5 @@
 #To Declare Image
 ![ObjectStorage](https://raw.githubusercontent.com/bhargavvc/system-design/main/img/ObjectStorage.png)
- 
-
+![ConsistentHashing](https://raw.githubusercontent.com/bhargavvc/system-design/main/img/ConsistentHashing.png)
+![ConsistentHashingExample](https://raw.githubusercontent.com/bhargavvc/system-design/main/img/ConsistentHashingExample.png)
+![HashingDistribution](https://raw.githubusercontent.com/bhargavvc/system-design/main/img/HashingDistribution.png)

@@ -59,7 +59,7 @@
 - [14. Introduction to SQL and Relational Databases](#14-introduction-to-sql-and-relational-databases)
 - [15. Introduction to NoSQL Databases](#15-introduction-to-nosql-databases)
 - [16. Replication and Sharding in Databases](#16-replication-and-sharding-in-databases)
-- [17. CAP Theorem: Understanding the Trade-offs in Distributed Databases](#17-cap-theorem-understanding-the-trade-offs-in-distributed-databases)
+- [17. CAP Theorem](#17-cap-theorem)
 - [18. Understanding Object Storage](#18-understanding-object-storage)
 - [19. Understanding Message Queues](#19-understanding-message-queues)
 - [20. Map Reduce Model](#20-map-reduce-model)
@@ -747,16 +747,17 @@ To prevent a single point of failure, load balancers can be deployed in pairs or
 - Together, these components are fundamental in building scalable and resilient applications, especially in environments with high user traffic. Understanding their functions and implementations is vital for effective system design.
 ---
 
-### 13. Consistent Hashing: Overview and Applications
+# 13. Consistent Hashing: Overview and Applications
 
 Consistent hashing is a distributed hashing scheme that allows for efficient data distribution and retrieval, especially in scenarios where nodes (servers) may frequently change (be added or removed). It is particularly useful for maintaining performance and reducing disruptions when the architecture of the system changes.
 
-#### Key Concepts
-
  
-#### Basic Hashing
+## Basic Hashing
 
 In a simple hashing approach for load balancing:
+
+![ConsistentHashingExample](https://raw.githubusercontent.com/bhargavvc/system-design/main/img/ConsistentHashingExample.png)
+- 
 - **Mapping Users to Servers**: Each user request can be hashed (e.g., using their IP address) to determine which server will handle the request.
 - **Example**: If a user's IP address is hashed using the modulus operation with the number of servers (e.g., `IP % number_of_servers`), it consistently routes requests from that user to the same server.
 
@@ -768,7 +769,10 @@ In a simple hashing approach for load balancing:
 
 ---
 
-#### Introduction to Consistent Hashing
+## Introduction to Consistent Hashing
+
+- ![UserHashingserverEx](https://raw.githubusercontent.com/bhargavvc/system-design/main/img/UserHashingserverEx.png)
+
 
 **Concept**:
 - Instead of directly hashing to servers, consistent hashing maps both the servers and requests onto a fixed circle (or hash space).
@@ -784,7 +788,9 @@ In a simple hashing approach for load balancing:
 
 ---
 
-#### Example of Consistent Hashing
+## Example of Consistent Hashing
+
+   - ![HashingDistribution](https://raw.githubusercontent.com/bhargavvc/system-design/main/img/HashingDistribution.png)
 
 1. **Server Setup**:
    - Assume there are three servers placed evenly around the circle (0, 120, 240 degrees).
@@ -801,24 +807,24 @@ In a simple hashing approach for load balancing:
 
 ---
 
-#### Implementing Consistent Hashing
+##Implementing Consistent Hashing
 
 - **Hash Key**: Represents the unique identifier for users (e.g., IP address).
 - **Hash Function**: Should be a strong hashing algorithm (e.g., SHA) that ensures a uniform distribution of requests.
 - **Nodes**: The servers or cache instances that are mapped onto the circle.
 
-#### Conclusion
+### Conclusion
 
 Consistent hashing is a powerful technique for load balancing and cache management in distributed systems, enabling efficient handling of user requests with minimal disruptions. By maintaining stable mappings even when nodes change, it optimizes resource utilization and enhances system resilience. Understanding this concept is vital for designing scalable and robust distributed architectures.
 
 ---
 
-### 14. Introduction to SQL and Relational Databases
+# 14. Introduction to SQL and Relational Databases
 
 SQL (Structured Query Language) is primarily used to interact with relational database management systems (RDBMS), which store data in structured tables. Understanding SQL and the principles behind relational databases is crucial for developing applications that require robust data management. 
 
 
-### Key Concepts of Relational Databases
+## Key Concepts of Relational Databases
 
 1. **Relational Model**:
    - Data is organized into tables (also called relations), where each table has a defined schema comprising columns (attributes) and rows (records).
@@ -854,7 +860,7 @@ SQL (Structured Query Language) is primarily used to interact with relational da
 4. **Transactions**:
    - A sequence of operations performed as a single logical unit of work. A transaction must be either fully completed (committed) or fully failed (rolled back), ensuring data consistency.
    
-### ACID Properties
+## ACID Properties
 
 ACID stands for **Atomicity, Consistency, Isolation, and Durability**. These properties ensure that database transactions are processed reliably.
 
@@ -879,7 +885,7 @@ ACID stands for **Atomicity, Consistency, Isolation, and Durability**. These pro
 4. **Durability**:
    - Once a transaction is committed, it is permanent, even in the event of a system failure. This is typically achieved by writing data to disk.
 
-### Trade-offs of Relational Databases
+## Trade-offs of Relational Databases
 
 - **Performance vs. Integrity**: 
   - While relational databases provide strong data integrity through ACID compliance, they may incur performance overhead due to the constraints and rules that must be enforced.
@@ -896,11 +902,11 @@ ACID stands for **Atomicity, Consistency, Isolation, and Durability**. These pro
 
 Relational databases are foundational to many applications, offering a robust way to store, retrieve, and manipulate structured data. Understanding SQL, along with the principles of ACID compliance, is essential for creating reliable and efficient data-driven applications. While they come with certain trade-offs, the benefits of using relational databases often outweigh the downsides, especially for applications requiring strict data integrity and complex querying capabilities.
 
-### 15. Introduction to NoSQL Databases
+# 15. Introduction to NoSQL Databases
 
 NoSQL stands for "not only SQL," indicating a diverse category of databases that do not necessarily use structured query language or the relational model. These databases are often referred to as non-relational databases and provide more flexible data models and `scaling options` compared to traditional SQL databases.
  
-### Key Variations of NoSQL Databases
+## Key Variations of NoSQL Databases
 
 1. **Types of NoSQL Databases**:
    - **Document Stores**: Store data as documents (e.g., JSON). Example: MongoDB.
@@ -948,7 +954,7 @@ NoSQL stands for "not only SQL," indicating a diverse category of databases that
    - Many NoSQL systems prioritize availability and partition tolerance over immediate consistency, allowing for data to be eventually consistent across nodes rather than strictly consistent at all times.
 
 
-### Advantages of NoSQL Databases
+## Advantages of NoSQL Databases
 
 1. **Scalability**:
    - NoSQL databases can scale horizontally by adding more servers (sharding), which helps in handling large amounts of traffic and data.
@@ -1005,12 +1011,12 @@ NoSQL databases provide a flexible and scalable alternative to traditional relat
 
 ---
 
-### 16. Replication and Sharding in Databases
+# 16. Replication and Sharding in Databases
 
 Replication and sharding are essential techniques used in databases to enhance scalability, availability, and performance. While they serve different purposes, they are often related and can be used in conjunction.
 
 
-#### 16.1 Replication
+## 16.1 Replication
 
 **Definition**: Replication involves creating copies of a database (or parts of it) across multiple nodes to ensure data availability and improve read performance.
 
@@ -1051,7 +1057,7 @@ Replication and sharding are essential techniques used in databases to enhance s
   - **Increased Complexity**: Managing multiple servers and ensuring data consistency can be challenging.
  
 
-#### 16.2 Sharding
+# 16.2 Sharding
 
 **Definition**: Sharding involves partitioning data across multiple database instances to distribute the load and improve performance.
 
@@ -1064,7 +1070,7 @@ Replication and sharding are essential techniques used in databases to enhance s
   - **Cross-Shard Queries**: Queries that need data from multiple shards can be slower and more complex to execute.
 
 
-#### How Sharding Works
+## How Sharding Works
 
 - **Data Partitioning**: Data is divided into smaller, manageable pieces called shards. Each shard is stored on a separate database node, allowing for horizontal scaling.
   
@@ -1085,13 +1091,13 @@ Replication and sharding are essential techniques used in databases to enhance s
      - **Advantages**: More evenly distributes data across shards, reducing the risk of hotspotting.
      - **Considerations**: Can complicate joins and relationships between data across shards.
 
-#### Benefits of Sharding
+## Benefits of Sharding
 
 - **Scalability**: Enables databases to handle larger amounts of data and higher request loads by distributing the workload across multiple nodes.
   
 - **Performance**: Queries can be executed faster since each shard contains only a portion of the total data.
 
-#### Challenges of Sharding
+## Challenges of Sharding
 
 - **Complexity**: Implementing sharding logic in the application can be complicated, especially when determining how to route requests to the correct shard.
   
@@ -1103,11 +1109,13 @@ Replication and sharding are essential techniques used in databases to enhance s
 
 Both replication and sharding are vital strategies in modern database design. Replication primarily enhances data availability and read performance, while sharding focuses on distributing data to improve scalability and performance. Understanding the trade-offs and implementations of these techniques is crucial for designing robust and efficient database systems.
 
-### 17. CAP Theorem: Understanding the Trade-offs in Distributed Databases
+# 17. CAP Theorem
+
+## Understanding the Trade-offs in Distributed Databases
 
 The **CAP theorem**, also known as Brewer's theorem, is a fundamental principle in the realm of distributed databases. It highlights the trade-offs that system designers must consider when designing systems that require data replication across multiple nodes.
 
-### Key Concepts of CAP Theorem
+## Key Concepts of CAP Theorem
 ![CAP Theorm](https://raw.githubusercontent.com/bhargavvc/system-design/main/img/CAPTheorem.png)
 
 
@@ -1120,7 +1128,7 @@ The **CAP theorem**, also known as Brewer's theorem, is a fundamental principle 
 - The CAP theorem applies specifically to distributed systems with replicated data. It assumes that partitions can and will occur, and systems must be designed to tolerate them. 
 - In practice, P is a given; thus, the focus is on making a choice between C and A.
 
-### The Trade-offs
+## The Trade-offs
 
 When a partition occurs in a distributed system, you can choose between:
 
@@ -1128,7 +1136,7 @@ When a partition occurs in a distributed system, you can choose between:
   
 - **Availability:** If you prioritize availability, the system continues to serve requests even if it means returning stale or inconsistent data. This approach can lead to discrepancies between replicas until they eventually synchronize.
 
-#### Trade-offs in Practice
+## Trade-offs in Practice
 
 - **CA Systems**: Provide consistency and availability but cannot tolerate partitioning. This is typical in a single-datacenter setup.
 - **AP Systems**: Offer availability and partition tolerance but may sacrifice consistency, common in distributed databases.
@@ -1136,7 +1144,7 @@ When a partition occurs in a distributed system, you can choose between:
 
 
 
-### Misunderstandings Around CAP
+## Misunderstandings Around CAP
 
 The CAP theorem is often misunderstood because:
 
@@ -1144,7 +1152,7 @@ The CAP theorem is often misunderstood because:
 
 2. **Generalization:** Applying CAP to non-replicated systems (like a single-node database) is not meaningful. CAP is specific to systems where data is distributed across multiple nodes.
 
-### Alternative Perspective: PACELC Theorem
+## Alternative Perspective: PACELC Theorem
 ![ChoiceOfChoosing](https://raw.githubusercontent.com/bhargavvc/system-design/main/img/ChoiceOFchoosing.png)
 
 To extend the conversation around CAP, we can consider the **PACELC theorem**, which adds more nuance to the discussion:
@@ -1170,13 +1178,13 @@ Understanding the CAP theorem helps system designers make informed decisions abo
 
 The CAP theorem, along with its extension into the PACELC theorem, provides valuable insights into the complexities and trade-offs involved in database management and system design. While it may not offer prescriptive solutions, it emphasizes the importance of recognizing and navigating the inherent limitations of distributed systems.
 
-### 18. Understanding Object Storage
+# 18. Understanding Object Storage
 
 Object storage has gained significant traction as a robust storage solution over the last decade. Unlike traditional file systems that rely on a hierarchical structure, object storage organizes data in a flat structure, which simplifies access and management, particularly for large files.
 
 ![ObjectStorage](https://raw.githubusercontent.com/bhargavvc/system-design/main/img/ObjectStorage.png)
 
-#### Key Features of Object Storage
+## Key Features of Object Storage
 
 1. **Flat Storage Structure:**
    - Object storage does not have a directory or folder structure like traditional file systems. All data is stored as individual objects, which simplifies management and retrieval.
@@ -1202,7 +1210,7 @@ Object storage has gained significant traction as a robust storage solution over
 
 
 
-#### Advantages of Object Storage
+## Advantages of Object Storage
 
 - **Scalability:**
   - Object storage systems are designed to handle vast amounts of data, making them ideal for applications that require long-term storage of large files.
@@ -1213,7 +1221,7 @@ Object storage has gained significant traction as a robust storage solution over
 - **Optimized for Large Files:**
   - Object storage excels in scenarios where large files need to be stored and retrieved, such as media files, backups, and archives.
 
-#### Use Cases for Object Storage
+## Use Cases for Object Storage
 
 1. **Media Storage:**
    - Ideal for applications that serve images, videos, or audio files. For instance, platforms like YouTube or Instagram rely heavily on object storage for efficient media management.
@@ -1229,7 +1237,7 @@ Object storage has gained significant traction as a robust storage solution over
 
 5. **Cloud Storage Services**: Services like Amazon S3, Google Cloud Storage, and Microsoft Azure Blob Storage use object storage to provide scalable and durable storage solutions.
 
-#### Comparing Object Storage to Databases
+## Comparing Object Storage to Databases
 
 - **Data Structure:**
   - Unlike databases that require structured data with defined schemas and relationships, object storage is schema-less, offering flexibility in how data is stored.
@@ -1244,12 +1252,12 @@ Object storage has gained significant traction as a robust storage solution over
 
 Object storage represents a significant advancement in data management, particularly for applications that handle large files or require scalable storage solutions. Its simplicity, scalability, and ease of access make it a preferred choice for modern applications, especially in scenarios where traditional file systems or databases would be inefficient or overly complex. Understanding the nuances of object storage will equip you with the knowledge needed to design effective data storage solutions in various applications.
 
-## **19. Understanding Message Queues**
+# **19. Understanding Message Queues**
 Message queues are fundamental to distributed systems, enabling asynchronous communication between services. They help decouple producers and consumers, improving scalability, fault tolerance, and maintainability.
 
 ---
 
-### **What are Message Queues?**
+## **What are Message Queues?**
 
 A **Message Queue** is a communication mechanism where messages are sent by a producer (sender) and stored temporarily until a consumer (receiver) retrieves and processes them.
 
@@ -1263,11 +1271,11 @@ A **Message Queue** is a communication mechanism where messages are sent by a pr
 
 ---
 
-# **Message Queues Example with Django, RabbitMQ, and Celery: Beginner to Expert Overview**
+## **Message Queues Example with Django, RabbitMQ, and Celery: Beginner to Expert Overview**
 ![MBroker](https://raw.githubusercontent.com/bhargavvc/system-design/main/img/MessageBroker.png)
-## **Django, Celery, and RabbitMQ Workflow**
+### **Django, Celery, and RabbitMQ Workflow**
 
-### **Roles Defined**
+**Roles Defined**
 1. **Django Application (Producer):** 
    - **As a Producer**:Sends tasks(with help of celery aync or delay function) to the queue(rabbitMq), e.g., for background job processing.
    - **As a Consumer**: Retrieves task results (e.g., via polling or callbacks(passing celery task id to views/functions)) or listens to RabbitMQ topics for messages in Pub/Sub models.
