@@ -4,3 +4,4 @@
  
 
 ![cdn](https://raw.githubusercontent.com/bhargavvc/system-design/main/img/cdn.png)
+![PushVsPullCDN](https://raw.githubusercontent.com/bhargavvc/system-design/main/img/PushVsPullCDN.png)

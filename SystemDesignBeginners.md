@@ -131,12 +131,12 @@
    - **Real-World Example**: Online gaming and stock trading platforms depend on real-time responsiveness, making low latency critical for user success and satisfaction.
 
 
-### 2. Computer Architecture Components
+# 2. Computer Architecture Components
 
 This section provides an overview of key computer hardware components, including their definitions, uses, and technical specifications.
 
 
-## 2.1 Storage (Disk)
+# 2.1 Storage (Disk)
 **Definition:**
 - Disk storage is the primary, non-volatile storage used for permanently storing data and programs, even when the computer is turned off.
 
@@ -284,7 +284,7 @@ This section provides an overview of key computer hardware components, including
 
 ---
 
-### 3. Application Architecture
+# 3. Application Architecture
 
 This section provides insights into the various architectural elements that comprise application systems.
 
@@ -487,7 +487,7 @@ Understanding these application layer protocols is crucial for building effectiv
 
 # 8. Overview of APIs and Common Paradigms
 
-APIs (Application Programming Interfaces) serve as crucial interfaces that allow different software systems to communicate and interact. In this section, we will explore three prominent API paradigms: REST, GraphQL, and gRPC, along with their respective advantages and disadvantages.
+APIs (Application Programming Interfaces) serve as crucial interfaces that allow different software systems to communicate and interact. In this section, we will explore three prominent API paradigms(patterns/examples/styles or model): REST, GraphQL, and gRPC, along with their respective advantages and disadvantages.
 
 ## 8.1 REST APIs
    - **Concept**: REST (Representational State Transfer) APIs are built on top of HTTP and follow specific guidelines for communication. They use standard HTTP methods (GET, POST, PUT, DELETE) and are stateless.
@@ -519,6 +519,8 @@ APIs (Application Programming Interfaces) serve as crucial interfaces that allow
      - **Browser Limitations**: Cannot be used directly from browsers without a proxy.
      - **Newer Technology**: Less community support and tooling compared to REST.
    - **Real-World Example**: Microservices communicating efficiently in a distributed system.
+
+**Statefull vs Stateless**: Stateful apps save client session data on the server, providing historical context and faster processing. In contrast, stateless apps don't save client session data on the server and rely on externalized state data.
 
 ### Conclusion
 Understanding these API paradigms is essential for modern software development. REST is the most commonly used API architecture, while GraphQL and gRPC offer advantages in specific scenarios, particularly where flexibility and performance are critical. As a developer, being familiar with the trade-offs of each API paradigm will enhance your ability to design and implement effective APIs for various applications.
@@ -653,6 +655,7 @@ A CDN (Content Delivery Network) is a network of servers that deliver content to
    - **CDN Servers**: Distributed servers that cache copies of the static content for faster access.
 
 3. **Types of CDNs**:
+   - ![PushVsPullCDN](https://raw.githubusercontent.com/bhargavvc/system-design/main/img/PushVsPullCDN.png)
    - **Push CDN**: Content is actively pushed from the origin server to the CDN servers. For example, when a user uploads a profile picture, it's sent to the CDN servers immediately.
    - **Pull CDN**: Content is fetched from the origin server only when a user requests it. If a request for a profile picture is made and the CDN does not have it cached, the CDN fetches it from the origin server and then caches it for future requests.
 
