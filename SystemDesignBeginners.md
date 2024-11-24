@@ -82,25 +82,25 @@
 
 # 1. Design Requirements
 
-#### 1.1 Data Movement
+## 1.1 Data Movement
    - **Concept**: The process of transferring data between different parts of a computer or between different computers within a network or across the internet.
    - **Advantage**: It allows for central processing of data while enabling data collection from multiple sources, making it easier to scale and have backup options.
    - **Disadvantage**: It can be complicated and needs a lot of network bandwidth, especially over long distances, which may cause delays.
    - **Real-World Example**: Content delivery networks (CDNs) like Akamai or Cloudflare distribute data efficiently to users around the world, reducing delays and increasing speed.
 
-#### 1.2 Data Storage
+## 1.2 Data Storage
 - **Concept**: This refers to how data is kept in a system, whether in RAM, on a hard drive, or across different locations in a network.
 - **Advantage**: Good data storage solutions help ensure that data is saved properly, can grow as needed, and is easy to access.
 - **Disadvantage**: Choosing the wrong storage type can lead to inefficiencies, higher costs, and problems with retrieving and managing data.
 - **Real-World Example**: Using SQL databases for structured data that requires complex queries, and NoSQL databases like MongoDB for unstructured data that needs to scale.
 
-#### 1.3 Data Transformation
+## 1.3 Data Transformation
    - **Concept**: The process of changing the format, structure, or values of data to meet specific business requirements or system needs.
    - **Advantage**: It helps data work better across different systems and can improve its quality and usefulness by combining and analyzing it.
    - **Disadvantage**: It can take a lot of computing power (like CPU and disk operations) and may involve complex processing steps, which can slow down the system and take more time.   
    - **Real-World Example**: In data warehousing, the ETL (Extract, Transform, Load) process extracts data from different systems, changes it into a useful format, and then loads it into a data warehouse for analysis.
 
-#### 1.4 System Availability
+## 1.4 System Availability
    - **Concept**: This measures how often a system is working and can be accessed and used over time.
    - **Advantage**: High availability is crucial for maintaining user trust and ensuring continuous access to services, especially for critical business operations.
    - **Disadvantage**: Making sure a system is highly available can be expensive and complicated. It often requires backup systems and can lead to having more resources than necessary.
@@ -136,7 +136,7 @@
 This section provides an overview of key computer hardware components, including their definitions, uses, and technical specifications.
 
 
-#### 2.1 Storage (Disk)
+## 2.1 Storage (Disk)
 **Definition:**
 - Disk storage is the primary, non-volatile storage used for permanently storing data and programs, even when the computer is turned off.
 
@@ -152,7 +152,7 @@ This section provides an overview of key computer hardware components, including
   - HDD: 5-10 milliseconds.
   - SSD: 0.1-1 milliseconds (much faster).
 
-#### 2.2 Memory (RAM)
+## 2.2 Memory (RAM)
 **Definition:**
 - RAM (Random Access Memory) is temporary, volatile memory for storing data and instructions for quick access while the computer is running.
 
@@ -165,7 +165,7 @@ This section provides an overview of key computer hardware components, including
 - **Speed:** Access times around 10-100 nanoseconds.
 - **Volatility:** Data is lost when power is turned off.
 
-#### 2.3 CPU (Central Processing Unit)
+## 2.3 CPU (Central Processing Unit)
 **Definition:**
 - The CPU is the "brain" of the computer, responsible for executing instructions and performing calculations.
 
@@ -177,7 +177,7 @@ This section provides an overview of key computer hardware components, including
 - **Cores:** Single-core, dual-core, quad-core (more cores allow multiple processes to run simultaneously).
 - **Architecture:** 32-bit or 64-bit, affecting how much data the CPU can handle at once.
 
-#### 2.4 Cache
+## 2.4 Cache
 **Definition:**
 - Cache is a small, high-speed memory located inside the CPU, used for storing frequently accessed data and instructions.
 
@@ -189,7 +189,7 @@ This section provides an overview of key computer hardware components, including
 - **Levels:** L1 (smallest, fastest), L2, L3 (larger but slower).
 - **Speed:** Extremely fast, with access times in nanoseconds.
 
-#### 2.5 Bus
+## 2.5 Bus
 **Definition:**
 - A communication system that transfers data between components inside or between computers.
 
@@ -200,7 +200,7 @@ This section provides an overview of key computer hardware components, including
 - **Types:** Data bus, address bus, control bus.
 - **Speed:** Measured in MT/s (Megatransfers per second).
 
-#### 2.6 GPU (Graphics Processing Unit)
+## 2.6 GPU (Graphics Processing Unit)
 **Definition:**
 - A GPU is a specialized processor designed to accelerate the rendering of images, animations, and videos.
 
@@ -213,7 +213,7 @@ This section provides an overview of key computer hardware components, including
 - **Clock Speed:** Measured in megahertz (MHz) or gigahertz (GHz).
 - **Architecture:** Designed for handling large-scale parallel tasks, ideal for processing multiple threads.
 
-#### 2.7 Motherboard
+## 2.7 Motherboard
 **Definition:**
 - The main circuit board that connects all components of a computer.
 
@@ -225,7 +225,7 @@ This section provides an overview of key computer hardware components, including
 - **Chipset:** Determines compatibility with CPUs and other components.
 - **Ports & Slots:** PCIe slots for GPUs, RAM slots, SATA connectors for storage.
 
-#### 2.8 Power Supply Unit (PSU)
+## 2.8 Power Supply Unit (PSU)
 **Definition:**
 - Converts AC power from the wall outlet into DC power that the computer components use.
 
@@ -237,7 +237,7 @@ This section provides an overview of key computer hardware components, including
 - **Efficiency Rating:** Indicates power conversion efficiency (e.g., 80 Plus Gold, Platinum).
 - **Modular vs Non-Modular:** Determines cable management flexibility.
 
-#### 2.9 I/O Devices (Input/Output Devices)
+## 2.9 I/O Devices (Input/Output Devices)
 **Definition:**
 - Hardware used to input data into or output data from the computer.
 
@@ -249,7 +249,7 @@ This section provides an overview of key computer hardware components, including
 - **Output Devices:** Monitor, printer, speakers.
 - **Storage Devices:** Hard drives, SSDs, USBs.
 
-#### 2.10 Network Interface Card (NIC)
+## 2.10 Network Interface Card (NIC)
 **Definition:**
 - A hardware component that connects a computer to a network.
 
@@ -260,7 +260,7 @@ This section provides an overview of key computer hardware components, including
 - **Speed:** 100 Mbps, 1 Gbps, 10 Gbps.
 - **Type:** Wired (Ethernet) or wireless (Wi-Fi).
 
-#### 2.11 BIOS/UEFI
+## 2.11 BIOS/UEFI
 **Definition:**
 - BIOS (Basic Input/Output System) or UEFI (Unified Extensible Firmware Interface) is firmware that initializes hardware during booting.
 
@@ -271,7 +271,7 @@ This section provides an overview of key computer hardware components, including
 - **BIOS:** Legacy system.
 - **UEFI:** Modern alternative with features like support for larger drives and faster boot times.
 
-#### 2.12 Registers
+## 2.12 Registers
 **Definition:**
 - Small, high-speed storage locations in the CPU that store data temporarily.
 
@@ -288,61 +288,61 @@ This section provides an overview of key computer hardware components, including
 
 This section provides insights into the various architectural elements that comprise application systems.
 
-#### 3.1 Code Deployment
+## 3.1 Code Deployment
 - **Concept**: Developers write code that eventually needs to be deployed to a server to handle user requests.
 - **Advantage**: The code can be continuously integrated and deployed using tools like **CICD (Continuous Integration/Continuous Deployment)**, making deployment faster and less error-prone.
 - **Disadvantage**: Requires setup and maintenance of CICD pipelines, which can be complex in large teams.
 - **Real-World Example**: GitHub Actions or Jenkins used for CICD to deploy code to production environments automatically.
 
-#### 3.2 Storage
+## 3.2 Storage
 - **Concept**: Servers need a place to store data. This can be local (disk on the server) or external (databases or distributed storage).
 - **Advantage**: External, distributed storage provides flexibility and resilience, allowing data to be stored globally and accessed from multiple servers.
 - **Disadvantage**: Relying on distributed storage introduces complexity and potential network latency.
 - **Real-World Example**: Using **Amazon S3** for distributed object storage or **PostgreSQL** as a database for persistent data.
 
-#### 3.3 Vertical Scaling
+## 3.3 Vertical Scaling
 - **Concept**: Upgrading the hardware (CPU, RAM, disk) of a single server to improve performance.
 - **Advantage**: Simple to implement; increases the capacity of a single server without architectural changes.
 - **Disadvantage**: Limited by the physical constraints of a single machine—eventually, a server can’t be upgraded further.
 - **Real-World Example**: Upgrading to a larger AWS EC2 instance to handle increased traffic for a website.
 
-#### 3.4 Horizontal Scaling
+## 3.4 Horizontal Scaling
 - **Concept**: Adding more servers to distribute the load across multiple machines.
 - **Advantage**: Allows handling more traffic by distributing requests among servers, enabling better scalability.
 - **Disadvantage**: Adds complexity in managing multiple servers, requiring solutions like load balancers.
 - **Real-World Example**: Using **Kubernetes** or **AWS Elastic Load Balancer** to distribute traffic across several containers or servers running the same application.
 
-#### 3.5 Load Balancer
+## 3.5 Load Balancer
 - **Concept**: Distributes incoming user requests to different servers based on traffic.
 - **Advantage**: Ensures no single server is overloaded, leading to better system performance and reliability.
 - **Disadvantage**: Adds an additional layer that must be managed and configured correctly.
 - **Real-World Example**: **NGINX** or **AWS Elastic Load Balancer** used to distribute traffic across multiple web servers.
 
-#### 3.6 Logging Service
+## 3.6 Logging Service
 - **Concept**: Logs store information about the system’s operation (e.g., user requests, errors).
 - **Advantage**: Helps developers debug and monitor the application by providing insights into what happened.
 - **Disadvantage**: Managing logs can be complex, especially with high-traffic applications where storage and analysis of logs become difficult.
 - **Real-World Example**: **ELK Stack (Elasticsearch, Logstash, Kibana)** for centralized logging and monitoring.
 
-#### 3.7 Metrics Service
+## 3.7 Metrics Service
 - **Concept**: Collects data about the server’s performance, like CPU usage, memory consumption, and error rates.
 - **Advantage**: Provides a real-time view of system health and helps identify performance issues.
 - **Disadvantage**: Requires integration and can be overwhelming to interpret with too many metrics.
 - **Real-World Example**: **Prometheus** for collecting metrics and **Grafana** for visualizing them in real-time.
 
-#### 3.8 Alerting Service
+## 3.8 Alerting Service
 - **Concept**: Sends notifications when certain thresholds are crossed (e.g., server load exceeds limits).
 - **Advantage**: Allows developers to respond quickly to issues before they impact users.
 - **Disadvantage**: Can lead to alert fatigue if not set up carefully, where too many false alerts cause confusion.
 - **Real-World Example**: **PagerDuty** or **Slack Alerts** integrated with monitoring systems like Prometheus.
 
-#### 3.9 Networking
+## 3.9 Networking
 - **Concept**: Communication between different components (servers, storage, etc.) over a network.
 - **Advantage**: Enables distributed systems, allowing components to run in different locations.(take vpn example connecting to office vpn network u can work in home town)
 - **Disadvantage**: Introduces complexity with potential latency, security risks, and the need for networking expertise.
 - **Real-World Example**: Cloud providers like **AWS**, **Azure**, or **Google Cloud** provide tools to handle networking between different services (like VPCs, firewalls, etc.).
  
-#### **Summary of Key Concepts**
+## **Summary of Key Concepts**
 - **Vertical Scaling**: Upgrading the server’s hardware (e.g., CPU, RAM) to handle more traffic. Simple but has physical limitations.
 - **Horizontal Scaling**: Adding more servers to distribute the load. Provides better scalability but increases complexity.
 - **Load Balancer**: Distributes traffic between servers. Prevents server overload and ensures traffic balance.
@@ -352,42 +352,42 @@ This section provides insights into the various architectural elements that comp
 - **Networking**: Connects different system components. Essential for distributed systems but adds complexity.
  
 
-### 4. Networking Basics
+# 4. Networking Basics
 
-#### 4.1 IP Addresses and Data Packets
+## 4.1 IP Addresses and Data Packets
 - **Concept**: Devices connected to network has an IP address. It serves as a mailing address to send and receive data packets. These packets are the basic units of communication in a network, encapsulated with metadata in headers for proper routing and delivery.
 - **Advantage**: IP addresses and structured packets allow precise routing of data across complex networks spanning the globe.
 - **Disadvantage**: The finite number of IP addresses in IPv4 can limit the expansion of internet-connected devices, leading to the need for IPv6.
 - **Real-World Example**: In an office network, each computer has a unique IP address. If one computer sends a file to another, the network uses IP addresses to ensure the file reaches the correct destination.
 
-#### 4.2 Transmission Protocols (TCP/IP)
+## 4.2 Transmission Protocols (TCP/IP)
 - **Concept**: Transmission Control Protocol (TCP) alongside Internet Protocol (IP) is used to ensure data is sent and received accurately. TCP handles the segmentation of a message into packets, the reassembly of packets at the destination, and error checking.
 - **Advantage**: TCP/IP provides a reliable way to send and receive large amounts of data across a network, ensuring that packets are in order and complete.
 - **Disadvantage**: TCP/IP can introduce latency, especially in high-traffic networks, due to its requirement for acknowledgment packets before more data is sent.
 - **Real-World Example**: Streaming services like Netflix use TCP/IP to ensure that video content is transmitted reliably from their servers to users' devices, maintaining a smooth viewing experience.
 
-#### 4.3 Public vs. Private IP Addresses
+## 4.3 Public vs. Private IP Addresses
 - **Concept**: Public IP addresses are visible on the internet and necessary for servers that need to be accessible globally. Private IP addresses are used within a private network and are not accessible from the public internet.
 - **Advantage**: Using private IP addresses within a local network enhances security and conserves public IP addresses for devices needing external access.
 - **Disadvantage**: Devices with only private IP addresses cannot initiate contact with the internet without network address translation (NAT) provided by a router.
 - **Real-World Example**: In a typical home network, the router uses a single public IP address while assigning private IP addresses to connected devices like laptops, smartphones, and smart home devices.
 
-#### 4.4 Ports and Port Forwarding
+### 4.4 Ports and Port Forwarding
 - **Concept**: Ports are virtual points where network connections start and end. Port forwarding is a network address translation technique that directs a communication request from one address and port number combination to another while the packets traverse a network gateway, such as a router or firewall.
 - **Advantage**: Ports allow multiple network services to run on a single device without interference, while port forwarding can expose services on a local network to the internet securely.
 - **Disadvantage**: Incorrectly configured port forwarding can expose the network to security risks if vulnerable services are exposed to the public internet.
 - **Real-World Example**: Port forwarding is often used in gaming to improve connectivity or in a home security system to allow remote access to security cameras.
 
 ---
-### 5. TCP vs UDP
+# 5. TCP vs UDP
 
-#### 5.1 TCP (Transmission Control Protocol)
+## 5.1 TCP (Transmission Control Protocol)
 - **Concept**: TCP is a connection-oriented protocol that establishes a reliable communication channel between two devices. `It ensures that data is sent and received in the correct order and without loss`, using mechanisms like the three-way handshake to initiate a connection.
 - **Advantage**: The main advantage of TCP is its reliability. If packets of data are lost during transmission, TCP automatically resends only the missing packets, allowing for complete data reassembly. This ensures that applications like web browsers and email clients receive all the necessary data correctly.
 - **Disadvantage**: TCP introduces overhead due to its connection setup and maintenance. The three-way handshake and additional packet acknowledgments add latency, making TCP slower compared to other protocols. This can be problematic for applications that require real-time performance.
 - **Real-World Example**: Commonly used in applications like web browsing (HTTP/HTTPS) and email (SMTP), TCP ensures that entire web pages and emails are received correctly and in order, providing a seamless user experience.
 
-#### 5.2 UDP (User Datagram Protocol)
+## 5.2 UDP (User Datagram Protocol)
 - **Concept**: UDP is a connectionless protocol that allows for the transmission of data without establishing a dedicated connection. It sends packets, known as datagrams, directly to the recipient without ensuring delivery or order.
 - **Advantage**: The primary advantage of UDP is its speed. By skipping connection establishment and not tracking packet delivery, UDP offers lower latency, making it suitable for real-time applications.
 - **Disadvantage**: The lack of reliability means that packets may be lost, duplicated, or received out of order. Applications using UDP must be able to tolerate these issues and handle them appropriately.
@@ -400,11 +400,11 @@ TCP and UDP are essential transport layer protocols in the Internet Protocol Sui
 ---
 
 
-### 6. DNS
+# 6. DNS
 
 The Domain Name System (DNS) is crucial for converting user-friendly domain names into the IP addresses that computers use to identify each other on the network. It functions much like a phone book for the internet, translating more memorable domain names into numerical IP addresses needed to locate and identify computer services and devices with the underlying network protocols.
 
-#### Overview of DNS:
+## Overview of DNS:
 
    - **Purpose**: DNS resolves human-readable domain names to machine-readable IP addresses, allowing browsers to load internet resources.
    - **Process**: When you type url like `google.com` into your browser, DNS servers take that Entry name(Domain Name) and translate it into the IP address associated with that domain so your browser can load the correct webpage.
@@ -418,7 +418,7 @@ The Domain Name System (DNS) is crucial for converting user-friendly domain name
      - **Security**: Vulnerable to DNS spoofing where bad actors redirect users to malicious sites.
 
 
-#### DNS Process Simplified:
+## DNS Process Simplified:
 1. **Query**: When you enter a domain name in your browser, the DNS query begins.
 2. **DNS Lookup**: Your computer contacts a recursive DNS service offered by your ISP. If the recursive server doesn't have the IP address cached, it queries other DNS servers on the internet.
 3. **DNS Root Server**: The query might go to a root server which knows everything about how to locate the top-level domain servers (like .com, .net).
@@ -426,7 +426,7 @@ The Domain Name System (DNS) is crucial for converting user-friendly domain name
 5. **Authoritative Name Server**: Finally, the query reaches the authoritative name server for the specific domain, which knows the actual IP address of the domain's server.
 6. **Response**: The IP address is sent back through the chain to your computer, and your browser can then make a direct request to the web server of the IP address to fetch the webpage.
 
-### **Real-World Example**:
+## **Real-World Example**:
 Imagine you want to visit google.com. You type it into your browser:
    - Your computer sends a DNS query to resolve google.com to an IP address.
    - The DNS server responds with Google's IP address, such as 192.168.1.1.
@@ -435,14 +435,14 @@ Imagine you want to visit google.com. You type it into your browser:
 
 This simple model shows how DNS plays a crucial role in everyday internet usage, making it possible for people to access websites using easy-to-remember domain names instead of complex IP addresses. This system is a critical component of the internet's functionality, providing a smoother and more user-friendly experience.
 
-### **Caching**:
+## **Caching**:
 To speed up DNS queries, IP addresses are cached locally on your computer and by your ISP. This reduces the need to go through the full DNS lookup process for each request, thereby speeding up web browsing.
 
-### **ICANN and Domain Registrars**:
+## **ICANN and Domain Registrars**:
 - **ICANN**: The Internet Corporation for Assigned Names and Numbers (ICANN) oversees the global DNS infrastructure. ICANN ensures unique domain name assignments and manages the top-level domain space.
 - **Domain Registrars**: Companies like GoDaddy, Google Domains, and others are accredited by ICANN to sell domain names. They handle the registration process and associate domain names with the customer's DNS servers.
 
-### **Server Interaction**:
+## **Server Interaction**:
 When a server receives a request, its primary job is to resolve these requests by referring to the DNS record and then return the appropriate response based on the incoming DNS queries.
 
 ### **Conclusion**:
@@ -451,29 +451,29 @@ While DNS is a complex, layered network protocol, understanding its basic functi
 ---
 
 
-### 7. Overview of Application Layer Protocols
+# 7. Overview of Application Layer Protocols
 
 **Application layer protocols** are essential for enabling communication between client and server applications. They define the rules for how messages are formatted, transmitted, and processed. In this context, we'll focus on the **client-server model**, **Remote Procedure Calls (RPC)**, and the two main protocols: **HTTP** and **WebSockets**.
 
-#### 7.1 Client-Server Model
+## 7.1 Client-Server Model
    - **Concept**: In this model, the client (which could be a browser, mobile app, or another server) sends requests to a server that hosts resources or services. The server processes these requests and returns responses.
    - **Advantage**: This model allows for centralized resource management and scalability. Multiple clients can interact with a single server.
    - **Disadvantage**: The server can become a bottleneck if it cannot handle the number of incoming requests efficiently.
    - **Real-World Example**: A web browser (client) requesting a webpage from a web server.
 
-#### 7.2 Remote Procedure Calls (RPC)
+## 7.2 Remote Procedure Calls (RPC)
    - **Concept**: RPC allows a program to execute a procedure (function) on a remote server as if it were a local call. This simplifies the process of interacting with server-side functions.
    - **Advantage**: Developers can write distributed applications more easily, abstracting the complexity of network communication.
    - **Disadvantage**: Network latency can impact performance, and error handling can become complex.
    - **Real-World Example**: A client application calling a function on a remote server to retrieve user data.
 
-#### 7.3 HTTP (Hypertext Transfer Protocol)
+## 7.3 HTTP (Hypertext Transfer Protocol)
    - **Concept**: HTTP is the primary protocol for transmitting data on the web. It operates on a request-response model where clients send requests, and servers respond with the requested data.
    - **Advantage**: Simple to use and widely supported, making it easy to build and consume web services.
    - **Disadvantage**: Stateless nature means that each request is independent; session management needs to be handled separately.
    - **Real-World Example**: Loading a webpage by sending a GET request to a web server.
 
-#### 7.4 WebSockets
+## 7.4 WebSockets
    - **Concept**: WebSockets provide a full-duplex communication channel over a single, long-lived connection, allowing for real-time data exchange between the client and server.
    - **Advantage**: Efficient for applications requiring continuous data flow, reducing overhead compared to traditional HTTP requests.
    - **Disadvantage**: More complex to implement and manage compared to stateless HTTP.
@@ -485,11 +485,11 @@ Understanding these application layer protocols is crucial for building effectiv
 ---
 
 
-### 8. Overview of APIs and Common Paradigms
+# 8. Overview of APIs and Common Paradigms
 
 APIs (Application Programming Interfaces) serve as crucial interfaces that allow different software systems to communicate and interact. In this section, we will explore three prominent API paradigms: REST, GraphQL, and gRPC, along with their respective advantages and disadvantages.
 
-#### 8.1 REST APIs
+## 8.1 REST APIs
    - **Concept**: REST (Representational State Transfer) APIs are built on top of HTTP and follow specific guidelines for communication. They use standard HTTP methods (GET, POST, PUT, DELETE) and are stateless.
    - **Advantages**:
      - **Statelessness**: Each request contains all the necessary information, allowing for easier scaling and load balancing across servers.
@@ -500,7 +500,7 @@ APIs (Application Programming Interfaces) serve as crucial interfaces that allow
    - **Real-World Example**: YouTube API endpoints for fetching video details and comments.
  
 
-#### 8.2 GraphQL APIs
+## 8.2 GraphQL APIs
    - **Concept**: GraphQL, developed by Facebook, allows clients to specify exactly what data they need from a single endpoint using queries, making it efficient in data retrieval.
    - **Advantages**:
      - **Flexibility**: Clients can request only the specific fields they need, reducing over-fetching.
@@ -510,7 +510,7 @@ APIs (Application Programming Interfaces) serve as crucial interfaces that allow
      - **Less Caching**: HTTP POST requests are not as easily cacheable as GET requests.
    - **Real-World Example**: Fetching user comments along with profile information in a single request.
   
-#### 8.3 gRPC APIs
+## 8.3 gRPC APIs
    - **Concept**: gRPC (Google Remote Procedure Call) is built on HTTP/2 and utilizes protocol buffers for data serialization, enabling efficient and fast communication between services.
    - **Advantages**:
      - **Performance**: Faster than REST due to the use of binary data and efficient serialization.
@@ -527,11 +527,11 @@ Understanding these API paradigms is essential for modern software development. 
 ---
 
 
-### 9. Basics of API Design
+# 9. Basics of API Design
 
 When designing APIs, it’s crucial to establish a clear contract that specifies how clients interact with your service. This involves defining the surface area of your API, outlining the available resources and the actions that can be performed on them.
 
-#### Core Concepts:
+## Core Concepts:
 1. **CRUD Operations**: Most API interactions revolve around Create, Read, Update, and Delete (CRUD) operations. Each operation corresponds to specific HTTP methods:
    - **Create**: POST request to add a new resource (e.g., a tweet).
    - **Read**: GET request to retrieve existing resources (e.g., fetching a list of tweets).
@@ -544,9 +544,9 @@ When designing APIs, it’s crucial to establish a clear contract that specifies
    - Endpoint: `POST /api/v1/tweets`
    - Request Body: JSON containing required fields like `userId` and `content`.
 
-### Overcoming Design Challenges
+## Overcoming Design Challenges
 
-#### **Addressing Over-fetching**
+## **Addressing Over-fetching**
 - **Problem**: Clients may receive more data than they need, especially when requesting resource details.
 - **Solution**: Use **optional parameters** in your requests. For instance, if you add a `fields` parameter to the endpoint that specifies which attributes of a tweet to return, clients can avoid over-fetching data.
   
@@ -558,8 +558,8 @@ When designing APIs, it’s crucial to establish a clear contract that specifies
       "fields": ["id", "content", "createdAt"]  // Only return these fields
    }
    ```
-
-#### **Addressing Under-fetching**
+ 
+## **Addressing Under-fetching**
 - **Problem**: Clients might need to make multiple requests to gather all necessary data (e.g., fetching tweets and their associated user information).
 - **Solution**: Implement **pagination** and **compound queries** to minimize the number of requests. By allowing clients to request related resources in a single call, you can reduce the number of separate API calls needed.
   
@@ -568,7 +568,7 @@ When designing APIs, it’s crucial to establish a clear contract that specifies
    GET /api/v1/users/12345/tweets?limit=10&offset=0
    ```
 
-### Backwards Compatibility
+## Backwards Compatibility
 When making changes to your API, it’s essential to maintain backwards compatibility:
 - **Optional Parameters**: Introduce new parameters as optional to avoid breaking existing clients.
 - **Versioning**: When significant changes are needed, version your API. For instance, `GET /api/v1/tweets` could evolve into `GET /api/v2/tweets`.
@@ -577,13 +577,15 @@ When making changes to your API, it’s essential to maintain backwards compatib
 Effective API design is critical for creating a robust interface that clients can reliably interact with. By focusing on clear endpoint definitions, managing state effectively, and considering the needs of users, you can create an API that scales well and serves its intended purpose. Understanding the trade-offs of over-fetching and under-fetching, along with ensuring backwards compatibility, will significantly enhance your API’s usability and longevity.
 ---
 
-### 10. Caching: An Overview
+# 10. Caching: An Overview
 
 Caching is a critical technique in software development, significantly enhancing performance by reducing latency and increasing throughput. Whether at the CPU level or in distributed systems, caching helps manage the speed of data retrieval, which is essential for a smooth user experience.
 
-#### Key Concepts of Caching
+## Key Concepts of Caching
 
 1. **Data Storage Hierarchy**:
+   - ![cpucache](https://raw.githubusercontent.com/bhargavvc/system-design/main/img/CPUCacheReadWrite.png)
+
    - **CPU Cache**: The fastest storage, but with limited capacity.
    - **RAM**: Faster than disk storage, used for temporary data.
    - **Disk Storage**: Persistent but slower compared to RAM and cache.
@@ -599,14 +601,14 @@ Caching is a critical technique in software development, significantly enhancing
    \]
    - A higher ratio indicates better cache performance.
 
-#### Example of Caching in Action
+## Example of Caching in Action
 
 Let's consider the example of fetching a JavaScript file on a website:
 - **Initial Request**: The browser requests a JavaScript file. If it’s not cached, a request is made to the server, resulting in a cache miss.
 - **Caching the File**: The file is retrieved from the server, cached on the disk, and served to the browser.
 - **Subsequent Requests**: Future requests for the same file will be served directly from the cache, resulting in a cache hit, significantly speeding up the loading time.
 
-#### Server-side Caching
+## Server-side Caching
 
 1. **In-Memory Caching**:
    - Servers often use in-memory stores (like Redis) to cache frequently accessed data. This reduces the number of reads from the database.
@@ -618,7 +620,7 @@ Let's consider the example of fetching a JavaScript file on a website:
    - **Least Recently Used (LRU)**: Removes the least recently accessed items from the cache.
    - **Least Frequently Used (LFU)**: Removes the least frequently accessed items, keeping popular items in the cache longer.
 
-#### Trade-offs in Caching
+## Trade-offs in Caching
 
 1. **Speed vs. Consistency**:
    - Caching speeds up data retrieval at the expense of consistency, as there’s a possibility of stale data.
@@ -634,11 +636,13 @@ Caching is a fundamental concept in software development that optimizes performa
 ---
 
 
-### 11. Content Delivery Networks (CDNs)
+# 11. Content Delivery Networks (CDNs)
 
-Content Delivery Networks (CDNs) are critical for optimizing the delivery of web content by reducing latency and improving access speed for users around the globe. By caching content closer to end users, CDNs minimize the need for requests to the origin server, which can be located far away from the user.
+A CDN (Content Delivery Network) is a network of servers that deliver content to users by caching and storing it closer to their location: 
+![cdn](https://raw.githubusercontent.com/bhargavvc/system-design/main/img/cdn.png)
 
-#### Key Concepts of CDNs
+ 
+## Key Concepts of CDNs
 
 1. **Definition and Purpose**:
    - CDNs consist of a distributed network of servers that cache static content (such as images, videos, stylesheets, and JavaScript files) to reduce the distance data must travel to reach users.
@@ -652,13 +656,13 @@ Content Delivery Networks (CDNs) are critical for optimizing the delivery of web
    - **Push CDN**: Content is actively pushed from the origin server to the CDN servers. For example, when a user uploads a profile picture, it's sent to the CDN servers immediately.
    - **Pull CDN**: Content is fetched from the origin server only when a user requests it. If a request for a profile picture is made and the CDN does not have it cached, the CDN fetches it from the origin server and then caches it for future requests.
 
-#### Benefits of CDNs
+## Benefits of CDNs
 
 1. **Reduced Latency**: CDNs decrease the distance data must travel by serving it from a nearby server, leading to faster load times for users.
 2. **Improved Availability**: If one CDN server fails, requests can be rerouted to another server, enhancing the reliability of content delivery.
 3. **Decreased Load on Origin Servers**: By distributing the load across multiple CDN servers, the origin server experiences less traffic and can handle more requests efficiently.
 
-#### Example Use Case
+## Example Use Case
 
 - **Static Content Caching**: 
   - When a user visits a website, they may need to load a JavaScript file. If the file is hosted on a CDN, the user's browser can retrieve it from the nearest CDN server rather than the origin server, significantly improving load times.
@@ -666,7 +670,7 @@ Content Delivery Networks (CDNs) are critical for optimizing the delivery of web
 - **Dynamic Content**:
   - While CDNs primarily serve static content, some newer technologies (like edge servers) are being developed to allow code execution closer to the user. This is still an emerging area.
 
-#### CDN Cache Control
+## CDN Cache Control
 
 1. **Cache Control Headers**:
    - These HTTP headers dictate how content should be cached. For example, the `Cache-Control` header can specify the max age of the cached content and whether it can be cached publicly or privately.
@@ -675,7 +679,7 @@ Content Delivery Networks (CDNs) are critical for optimizing the delivery of web
 2. **Cache Hits and Misses**:
    - A **cache hit** occurs when requested data is found in the cache, while a **cache miss** requires fetching data from the origin server. Cache management is crucial for maintaining high performance.
 
-#### Summary
+### Summary
 
 CDNs enhance user experience by delivering content more efficiently, lowering latency, and distributing the load across multiple servers. Understanding how to implement and manage a CDN is essential for developers, particularly for applications with a global user base. With the right caching strategies, including push and pull methods, and effective use of cache control headers, organizations can significantly improve the performance and reliability of their web services.
 
@@ -987,7 +991,7 @@ NoSQL stands for "not only SQL," indicating a diverse category of databases that
 3. **Limited Transaction Support**:
    - Some NoSQL databases do not fully support ACID properties (Atomicity, Consistency, Isolation, Durability) and may lack transaction management features found in SQL databases.
 
-#### Use Cases
+## Use Cases
 
 - **Big Data Applications**: Applications requiring the storage of large volumes of unstructured data, like social media platforms.
 - **Real-time Analytics**: Systems needing fast access to data for analytics, such as user activity tracking and reporting.
@@ -1316,7 +1320,7 @@ A **Message Queue** is a communication mechanism where messages are sent by a pr
 The Publish/Subscribe (Pub/Sub) model expands on message queues by allowing multiple subscribers to consume messages published to a topic.
 
 
-#### **Scenario: Real-Time Notifications**
+## **Scenario: Real-Time Notifications**
 1. **Publisher (Django App):**
    - Publishes a message to a RabbitMQ topic, such as "User Signed Up" or "Order Completed."
    - Other systems don't need to know about the publisher, promoting decoupling.
@@ -1485,27 +1489,27 @@ MapReduce divides the processing into two primary phases:
 
 ### **Step-by-Step Execution**
 
-#### **1. Input Splitting**
+## **1. Input Splitting**
 
 - **Data Partitioning**: Input data is divided into fixed-size pieces called **input splits**.
 - **Assignment**: Each split is assigned to a Map task.
 
-#### **2. Map Phase**
+## **2. Map Phase**
 
 - **Processing**: Map tasks read input splits and process them according to the Map function.
 - **Output**: Intermediate key-value pairs are written to local disk.
 
-#### **3. Shuffling and Sorting**
+## **3. Shuffling and Sorting**
 
 - **Shuffling**: Intermediate data is transferred across the network to the appropriate Reduce tasks based on keys.
 - **Sorting**: Within each Reduce task, data is sorted by keys to group all values for a single key.
 
-#### **4. Reduce Phase**
+## **4. Reduce Phase**
 
 - **Aggregation**: Reduce tasks process the sorted data, aggregating values for each key.
 - **Output**: Final results are written to the distributed file system.
 
-#### **5. Result**
+## **5. Result**
 
 - **Collection**: Output files from Reduce tasks contain the final results.
 

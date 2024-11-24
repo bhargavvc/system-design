@@ -2,3 +2,5 @@
 ![ForwardProxy](https://raw.githubusercontent.com/bhargavvc/system-design/main/img/ForwardProxy.png)
 ![ReverseProxy](https://raw.githubusercontent.com/bhargavvc/system-design/main/img/ReverseProxy.png)
  
+
+![cdn](https://raw.githubusercontent.com/bhargavvc/system-design/main/img/cdn.png)
