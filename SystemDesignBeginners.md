@@ -347,7 +347,7 @@ This section provides insights into the various architectural elements that comp
 - **Horizontal Scaling**: Adding more servers to distribute the load. Provides better scalability but increases complexity.
 - **Load Balancer**: Distributes traffic between servers. Prevents server overload and ensures traffic balance.
 - **Logs**: Record system operations and errors. Useful for debugging but requires management.
-- **Metrics**: Real-time data on system performance. Helps monitor system health.
+- **Metrics**: Real-time data on system performance. Helps monitor system health. 
 - **Alerting**: Notifies developers of issues in real-time, based on system metrics.
 - **Networking**: Connects different system components. Essential for distributed systems but adds complexity.
  
@@ -361,11 +361,14 @@ This section provides insights into the various architectural elements that comp
 - **Real-World Example**: In an office network, each computer has a unique IP address. If one computer sends a file to another, the network uses IP addresses to ensure the file reaches the correct destination.
 
 ## 4.2 Transmission Protocols (TCP/IP)
+![UDP](https://raw.githubusercontent.com/bhargavvc/system-design/main/img/UDP.png)
+- 
 - **Concept**: Transmission Control Protocol (TCP) alongside Internet Protocol (IP) is used to ensure data is sent and received accurately. TCP handles the segmentation of a message into packets, the reassembly of packets at the destination, and error checking.
 - **Advantage**: TCP/IP provides a reliable way to send and receive large amounts of data across a network, ensuring that packets are in order and complete.
 - **Disadvantage**: TCP/IP can introduce latency, especially in high-traffic networks, due to its requirement for acknowledgment packets before more data is sent.
 - **Real-World Example**: Streaming services like Netflix use TCP/IP to ensure that video content is transmitted reliably from their servers to users' devices, maintaining a smooth viewing experience.
 
+![NetworkingDetailed](https://raw.githubusercontent.com/bhargavvc/system-design/main/img/NetworkingDetailedBeginners.png)
 ## 4.3 Public vs. Private IP Addresses
 - **Concept**: Public IP addresses are visible on the internet and necessary for servers that need to be accessible globally. Private IP addresses are used within a private network and are not accessible from the public internet.
 - **Advantage**: Using private IP addresses within a local network enhances security and conserves public IP addresses for devices needing external access.
@@ -382,12 +385,18 @@ This section provides insights into the various architectural elements that comp
 # 5. TCP vs UDP
 
 ## 5.1 TCP (Transmission Control Protocol)
+![TcpHandshake](https://raw.githubusercontent.com/bhargavvc/system-design/main/img/TcpHandshake.png)
+- 
 - **Concept**: TCP is a connection-oriented protocol that establishes a reliable communication channel between two devices. `It ensures that data is sent and received in the correct order and without loss`, using mechanisms like the three-way handshake to initiate a connection.
 - **Advantage**: The main advantage of TCP is its reliability. If packets of data are lost during transmission, TCP automatically resends only the missing packets, allowing for complete data reassembly. This ensures that applications like web browsers and email clients receive all the necessary data correctly.
 - **Disadvantage**: TCP introduces overhead due to its connection setup and maintenance. The three-way handshake and additional packet acknowledgments add latency, making TCP slower compared to other protocols. This can be problematic for applications that require real-time performance.
 - **Real-World Example**: Commonly used in applications like web browsing (HTTP/HTTPS) and email (SMTP), TCP ensures that entire web pages and emails are received correctly and in order, providing a seamless user experience.
+![Tcp-OSI-model](https://raw.githubusercontent.com/bhargavvc/system-design/main/img/Tcp-OSI-model.png)
+- 
 
 ## 5.2 UDP (User Datagram Protocol)
+![UDP](https://raw.githubusercontent.com/bhargavvc/system-design/main/img/UDP.png)
+- 
 - **Concept**: UDP is a connectionless protocol that allows for the transmission of data without establishing a dedicated connection. It sends packets, known as datagrams, directly to the recipient without ensuring delivery or order.
 - **Advantage**: The primary advantage of UDP is its speed. By skipping connection establishment and not tracking packet delivery, UDP offers lower latency, making it suitable for real-time applications.
 - **Disadvantage**: The lack of reliability means that packets may be lost, duplicated, or received out of order. Applications using UDP must be able to tolerate these issues and handle them appropriately.
@@ -403,6 +412,7 @@ TCP and UDP are essential transport layer protocols in the Internet Protocol Sui
 # 6. DNS
 
 The Domain Name System (DNS) is crucial for converting user-friendly domain names into the IP addresses that computers use to identify each other on the network. It functions much like a phone book for the internet, translating more memorable domain names into numerical IP addresses needed to locate and identify computer services and devices with the underlying network protocols.
+
 
 ## Overview of DNS:
 
@@ -441,6 +451,10 @@ To speed up DNS queries, IP addresses are cached locally on your computer and by
 ## **ICANN and Domain Registrars**:
 - **ICANN**: The Internet Corporation for Assigned Names and Numbers (ICANN) oversees the global DNS infrastructure. ICANN ensures unique domain name assignments and manages the top-level domain space.
 - **Domain Registrars**: Companies like GoDaddy, Google Domains, and others are accredited by ICANN to sell domain names. They handle the registration process and associate domain names with the customer's DNS servers.
+these domain name seller  host the dns server that host dns records and with specific domain name
+
+ and we dont need to make always dns query behind since when u acces stored in borwsers cache or disk cache y isp 
+
 
 ## **Server Interaction**:
 When a server receives a request, its primary job is to resolve these requests by referring to the DNS record and then return the appropriate response based on the incoming DNS queries.
@@ -1720,3 +1734,174 @@ Understanding MapReduce is crucial for data engineers and developers working wit
   - [Apache Spark Documentation](https://spark.apache.org/docs/latest/)
 
 ---
+
+
+**Additional Info**
+# 21 Networking (More Deatiled)
+**Main Points and Key Concepts in Networking Basics**
+
+
+![NetworkingDetailed](https://raw.githubusercontent.com/bhargavvc/system-design/main/img/NetworkingDetailed.png)
+
+
+---
+
+### **1. Communication Between Computers**
+
+- **Analogy with Mail Delivery**: Just like sending mail from one house to another requires knowing each house's address, computers need to know each other's addresses to communicate.
+- **Client and Server Model**: Communication involves a client computer and a server, where data is sent back and forth.
+
+### **2. IP Addresses**
+
+- **Unique Identifiers**: Every machine communicating over the public Internet must have a **public IP address** to be uniquely identifiable.
+- **Structure of IP Addresses**:
+  - **IPv4**:
+    - **32-bit integer**.
+    - Written in dotted-decimal notation: four groups of up to three digits, separated by dots (e.g., `192.168.1.1`).
+    - Maximum value for each group is **255** (since 2^8 = 256 possible values per octet).
+    - Total of approximately **4 billion** unique addresses (2^32).
+    - **Limitation**: Not enough for all devices globally.
+  - **IPv6**:
+    - **128-bit address**.
+    - Provides a vastly larger address space.
+    - Adoption is increasing but IPv4 is still commonly used.
+
+### **3. Sending Data Packets**
+
+- **Data Packets**: Data sent over the Internet is broken into packets.
+- **Metadata and Headers**:
+  - **IP Header**: Contains metadata like source and destination IP addresses.
+  - **Analogy with Envelopes**: Just as an envelope has sender and receiver addresses, data packets have headers with necessary routing information.
+
+### **4. Limitations of IP Protocol**
+
+- **No Sequencing Information**: IP doesn't handle ordering of packets or reassembly of data split across multiple packets.
+- **Analogy with Sending a Book**:
+  - If you mail a book by sending individual pages in separate envelopes without page numbers, the recipient wouldn't know the correct order.
+  - IP alone doesn't provide page numbers (sequence information).
+
+### **5. TCP (Transmission Control Protocol)**
+
+- **Purpose**: Addresses IP's limitations by ensuring reliable data transmission.
+- **TCP Header**:
+  - Adds metadata such as **sequence numbers** to packets.
+  - Allows the receiver to reassemble packets in the correct order.
+- **Packet Structure with TCP**:
+  - **IP Header**: Routing information.
+  - **TCP Header**: Transport control information, including sequence numbers.
+  - **Application Data**: The actual data being transmitted.
+
+### **6. Application Layer and Protocols**
+
+- **HTTP (HyperText Transfer Protocol)**:
+  - An **application-level protocol** used for web communication.
+  - Operates at a higher layer than TCP/IP.
+- **Layers of Communication**:
+  - **Network Layer (IP)**: Handles addressing and routing between devices.
+  - **Transport Layer (TCP)**: Manages data transfer reliability and order.
+  - **Application Layer (HTTP)**: Facilitates specific application services.
+
+### **7. Public vs. Private IP Addresses**
+
+- **Public IP Addresses**:
+  - Required for servers to be accessible over the Internet.
+  - Unique and routable on the global Internet.
+- **Private IP Addresses**:
+  - Used within local networks (LANs).
+  - Not routable on the public Internet.
+  - Devices within the same LAN can communicate using private IPs.
+- **Role of Routers**:
+  - **NAT (Network Address Translation)**: Routers map private IP addresses to the router's public IP address for external communication.
+  - **Example**: Multiple devices at home share one public IP address via the router.
+
+### **8. Static vs. Dynamic IP Addresses**
+
+- **Static IP Addresses**:
+  - Do not change over time.
+  - Important for servers so clients can reliably connect.
+- **Dynamic IP Addresses**:
+  - Can change over time.
+  - Common for client devices.
+  - **Dynamic DNS**: Services that update domain names to point to changing IP addresses.
+
+### **9. Ports and Communication Channels**
+
+- **Definition of Ports**:
+  - Ports are used in computer networking to identify connection endpoints and direct data to specific services
+  - Numerical identifiers for communication endpoints on a device.
+  - **16-bit values**: Range from 0 to 65,535.
+- **Default Ports for Protocols**:
+  - **HTTP**: Port **80**.
+  - **HTTPS**: Port **443**.
+  - **SSH**: Port **22**.
+- **Usage in URLs**:
+  - Ports can be specified explicitly (e.g., `http://example.com:8080`).
+  - Default ports are implied and need not be specified.
+- **Client-Side Ports**:
+  - Clients use ephemeral (temporary) ports for receiving responses.
+  - These ports are often randomly assigned and managed by the operating system.
+
+### **10. Localhost and Loopback Address**
+
+- **Localhost (`127.0.0.1`)**:
+  - A special IP address that refers to the local machine.
+  - Used for testing and development purposes.
+- **Running Local Applications**:
+  - Servers or applications can be run on localhost with a specific port.
+  - **Example**: Accessing a web application at `localhost:4200`.
+
+### **11. Port Usage and Conflicts**
+
+- **Single Application per Port**:
+  - Only one application can listen on a specific port at a time.
+- **Port Conflicts**:
+  - Attempting to run multiple applications on the same port results in errors.
+  - Applications must use different ports to operate simultaneously.
+
+### **12. Summary of Data Communication Process**
+
+- **Packet Transmission**:
+  - Data is broken into packets with necessary headers for routing and reassembly.
+- **Reassembly at Destination**:
+  - TCP ensures packets are reassembled correctly at the receiving end.
+- **Role of Different Protocols**:
+  - **IP**: Directs packets to the correct device.
+  - **TCP**: Manages reliable data transfer and correct sequencing.
+  - **HTTP/HTTPS**: Handles the content and specifics of web communication.
+
+---
+
+**Key Takeaways:**
+
+- **Understanding IP Addresses**:
+  - Essential for identifying devices on a network.
+  - Knowledge of IPv4 limitations and the role of IPv6.
+- **Importance of Protocol Layers**:
+  - Each layer serves a specific function in data communication.
+  - Separation of concerns allows for scalability and modularity.
+- **Role of TCP in Reliable Communication**:
+  - Provides mechanisms for data integrity and order.
+- **Significance of Ports**:
+  - Enable multiple services to run on a single IP address.
+  - Critical for network configuration and troubleshooting.
+- **Networking in Application Development**:
+  - Developers typically interact with the application layer.
+  - Understanding underlying protocols aids in designing robust systems.
+
+---
+
+**Examples Highlighted:**
+
+- **Mail Analogy**:
+  - Comparing data packets to letters or envelopes sent through postal mail.
+- **Sending a Book by Mail**:
+  - Illustrates the need for sequencing information to reassemble data correctly.
+- **Local Development Server**:
+  - Running an Angular application on `localhost:4200`.
+  - Demonstrates the use of ports and local IP addresses.
+- **Accessing Services Without Specifying Ports**:
+  - Visiting `google.com` without specifying port `443` for HTTPS.
+
+---
+
+By grasping these fundamental networking concepts, software engineers and system designers can build efficient, scalable, and reliable networked applications. Understanding how data travels from one machine to another, and the protocols involved at each layer, is crucial for troubleshooting and optimizing system performance.
